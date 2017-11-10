@@ -1,0 +1,15 @@
+language: java
+
+notifications:
+    email: false
+
+branches:
+    only:
+    - develop
+    - master
+
+
+deploy:
+    provider: heroku
+    api_key: "W2R2231017"
+    app: Spring1
