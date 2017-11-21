@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Accueil</title>
+</head>
+<body>
+	<header id="header">  
+    <img id="logo" src="https://media.discordapp.net/attachments/362869504272891906/377771522821062656/VMx.png" alt="">  
+    <nav id="menubar">
+      <ul>
+        <li><div id=name>{{title}}</div></li>
+        <li><a class="menu" routerLink="/clients">Gestion</a></li>
+        <li><a class="menu" routerLink="/agenda">Agenda</a></li>
+      </ul>
+    </nav>
+    <nav id="selectbar">
+      <ul>
+        <li><a class="menuSelect" routerLink="/clients">Clients</a></li>
+        <li><a class="menuSelect" routerLink="/doctors">Doctors</a></li>
+        <li><a class="menuSelect" routerLink="/rooms">Rooms</a></li>
+      </ul>
+  </nav>	
+	</header>	
+  <router-outlet></router-outlet>
+</body>
+</html>
