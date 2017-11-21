@@ -31,7 +31,8 @@ ul {
     margin: 0 auto;
     height: 50px;
     display: block;
-    background-color: #F0F5FF;
+	background-color: #F0F5FF;
+	text-align: center;
 	border-collapse: separate;
 	border-spacing: 20px 0;
 }

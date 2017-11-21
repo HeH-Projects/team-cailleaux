@@ -31,7 +31,8 @@ ul {
     margin: 0 auto;
     height: 50px;
     display: block;
-    background-color: #F0F5FF;
+	background-color: #F0F5FF;
+	text-align: center;
 	border-collapse: separate;
 	border-spacing: 20px 0;
 }
@@ -44,6 +45,7 @@ ul {
 	padding: 10px;
 	font-size: 24px;
 	text-decoration: none;
+	text-align: center;
 	cursor: pointer;
     float: left;
 	transition: 0.2s;
