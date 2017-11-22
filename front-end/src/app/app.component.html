@@ -2,7 +2,8 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Accueil</title>
+  <title>Accueil</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>">
 </head>
 <body>
 	<header id="header">  
@@ -12,12 +13,37 @@
         <li><div id=name>{{title}}</div></li>
         <li><a class="menu" routerLink="/clients">Gestion</a></li>
         <li><a class="menu" routerLink="/agenda">Agenda</a></li>
-     </ul>
-   </nav>
+      </ul>
+    </nav>
+    <nav id="selectbar">
+      <ul>
+        <li><a id="dateSelect" class="menuSelect">combodate</a></li>
+        <li><a id="date" class="menuSelect">date</a></li>
+        <li><a class="menuSelect">&#8592;</a></li>
+        <li><a class="menuSelect">&#8594;</a></li>
+        
+        <li><a class="menuSelect" routerLink="/clients">Clients</a></li>
+        <li><a class="menuSelect" routerLink="/doctors">Doctors</a></li>
+        <li><a class="menuSelect" routerLink="/rooms">Rooms</a></li>
+      </ul>
+    </nav>
   </header> 
   <router-outlet></router-outlet>
 	<footer>
 		Team Cailleaux 💪😂💯👌.
-	</footer>
+  </footer>
+  <script>
+    
+  var agenda = true;
+
+  $('document').ready(function () {
+    console.log("Prêt à l'emploi !");
+    $('#date').html('C LA DATE SALE PUTE');
+  });
+
+  $('.menuSelect').click(function() {
+    alert("Cliqué !");
+  });
+  </script>
 </body>
 </html>

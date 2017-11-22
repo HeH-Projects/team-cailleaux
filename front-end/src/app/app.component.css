@@ -49,6 +49,15 @@ ul {
 	float: left;
 }
 
+#selectbar {	
+    margin: 0 auto;
+    height: 50px;
+    display: block;
+    background-color: #F0F5FF;
+	border-collapse: separate;
+	border-spacing: 20px 0;
+}
+
 .menu {
 	padding: 20px;
 	font-size: 26px;
