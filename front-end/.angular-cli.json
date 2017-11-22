@@ -1,7 +1,7 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "project": {
-    "name": "Vet Manager"
+    "name": "a4app"
   },
   "apps": [
     {

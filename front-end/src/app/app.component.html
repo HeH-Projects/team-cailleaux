@@ -11,21 +11,27 @@
     <nav id="menubar">
       <ul>
         <li><div id=name>{{title}}</div></li>
-        <li><a class="menu" routerLink="/clients">Gestion</a></li>
-        <li><a class="menu" routerLink="/agenda">Agenda</a></li>
+        <li><a class="menu" routerLink="/clients" (click)="nav('gestion')" (click)="current = 'clients'">Gestion</a></li>
+        <li><a class="menu" routerLink="/agenda"  (click)="nav('agenda')">Agenda</a></li>
       </ul>
     </nav>
     <nav id="selectbar">
-      <ul>
-        <li><a id="dateSelect" class="menuSelect">combodate</a></li>
-        <li><a id="date" class="menuSelect">date</a></li>
-        <li><a class="menuSelect">&#8592;</a></li>
-        <li><a class="menuSelect">&#8594;</a></li>
-        
-        <li><a class="menuSelect" routerLink="/clients">Clients</a></li>
-        <li><a class="menuSelect" routerLink="/doctors">Doctors</a></li>
-        <li><a class="menuSelect" routerLink="/rooms">Rooms</a></li>
-      </ul>
+      <div id="agenda" [hidden]="!agenda">
+        <ul class="inline-list">
+          <li><a class="menuSelect" id="dateSelect">combodate</a></li>
+          <li><a class="menuSelect" id="date">date</a></li>
+          <li><a class="menuSelect">&#8592;</a></li>
+          <li><a class="menuSelect">&#8594;</a></li>
+        </ul>
+      </div>
+      <div id="gestion" [hidden]="agenda">
+        <ul class="inline-list">              
+          <li><a class="menuSelect" routerLink="/clients" [style.border-color]="setCurrent('clients')" (click)="current = 'clients'">Clients</a></li>
+          <li><a class="menuSelect" routerLink="/doctors" [style.border-color]="setCurrent('doctors')" (click)="current = 'doctors'">Doctors</a></li>
+          <li><a class="menuSelect" routerLink="/rooms" [style.border-color]="setCurrent('rooms')" (click)="current = 'rooms'">Rooms</a></li>
+        </ul>
+      </div>
+      
     </nav>
   </header> 
   <router-outlet></router-outlet>

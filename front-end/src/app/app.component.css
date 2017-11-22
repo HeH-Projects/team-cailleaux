@@ -23,17 +23,19 @@ body {
 }
 
 ul {
+	list-style-type: none;
 	margin: 0;
-	list-style: none;
+}
+
+a {
+	text-decoration: none;
 }
 
 #menubar {
     margin: 0 auto;
     height: 74px;
-    display: block;
 	color: #F0F5FF;
 	background-color: cornflowerblue;
-	text-align: center;
 	border-collapse: separate;
 	border-spacing: 20px 0;
 }
@@ -52,16 +54,18 @@ ul {
 #selectbar {	
     margin: 0 auto;
     height: 50px;
-    display: block;
-    background-color: #F0F5FF;
+	background-color: #F0F5FF;
 	border-collapse: separate;
 	border-spacing: 20px 0;
+}
+
+.inline-list li {
+    display: inline-block;
 }
 
 .menu {
 	padding: 20px;
 	font-size: 26px;
-	text-decoration: none;
 	color: #F0F5FF;
 	cursor: pointer;
     float: right;
@@ -71,4 +75,17 @@ ul {
 .menu:hover {
 	background-color: #F0F5FF;
 	color: cornflowerblue;
+}
+
+.menuSelect {
+	padding: 10px;
+	color: cornflowerblue;
+	cursor: pointer;
+	border-bottom: 3px solid transparent;
+	transition: 0.2s;
+}
+
+.menuSelect:hover {
+	color: #002288;
+	border-color: #002288;
 }

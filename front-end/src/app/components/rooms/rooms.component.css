@@ -27,23 +27,12 @@ ul {
 	list-style: none;
 }
 
+a {
+	text-decoration: none;
+}
+
 #main {
 	overflow: hidden;
-}
-
-.menuSelect {
-	padding: 10px;
-	font-size: 24px;
-	text-decoration: none;
-	text-align: center;
-	cursor: pointer;
-    float: left;
-	transition: 0.2s;
-}
-
-.menuSelect:hover {
-	background-color: #F0F5FF;
-	color: cornflowerblue;
 }
 
 .content {
