@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="dfsgd57fvfof9o@ec2-46-137-174-67.eu-west-1.compute.amazonaws.com" uuid="4c10ec5d-fa54-4ca1-bea8-f14e4311bc09">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://ec2-46-137-174-67.eu-west-1.compute.amazonaws.com/dfsgd57fvfof9o?sslmode=require</jdbc-url>
+      <driver-properties>
+        <property name="ApplicationName" value="DataGrip" />
+      </driver-properties>
+    </data-source>
+  </component>
+</project>
