@@ -4,7 +4,6 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-create-rooms',
   templateUrl: './create-rooms.component.html',
   styleUrls: ['./create-rooms.component.css'],
-  encapsulation: ViewEncapsulation.None
 })
 export class CreateRoomsComponent implements OnInit {
 
