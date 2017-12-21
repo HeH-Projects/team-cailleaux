@@ -17,7 +17,7 @@ public class Room implements Serializable {
     protected Room(){}
 
     public Room(String material){
-        this.material=material();
+        this.material=material;
     }
 
     public long getId(){

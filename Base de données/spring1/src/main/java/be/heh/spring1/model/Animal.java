@@ -27,18 +27,18 @@ public class Animal implements Serializable {
     private String species;
 
     @Column(name="birthDate")
-    private Timestamp birthDate;
+    private String birthDate;
 
 
     protected Animal(){}
 
-    public Animal(int numOwner, int numVet, String name, char sex, String species, Timestamp birthDate){
-        this.numOwner=numOwner();
-        this.numVet=numVet();
-        this.name=name();
-        this.sex=sex();
-        this.species=species();
-        this.birthDate=birthDate();
+    public Animal(int numOwner, int numVet, String name, char sex, String species, String birthDate){
+        this.numOwner=numOwner;
+        this.numVet=numVet;
+        this.name=name;
+        this.sex=sex;
+        this.species=species;
+        this.birthDate=birthDate;
     }
 
     public long getId(){
@@ -77,11 +77,11 @@ public class Animal implements Serializable {
         this.species=species;
     }
 
-    public Timestamp birthDate(){
+    public String birthDate(){
         return birthDate;
     }
 
-    public void setBirthDate(Timestamp birthDate){
+    public void setBirthDate(String birthDate){
         this.birthDate=birthDate;
     }
 

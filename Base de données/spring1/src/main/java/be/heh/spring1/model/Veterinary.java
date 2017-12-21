@@ -17,7 +17,7 @@ public class Veterinary implements Serializable {
     protected Veterinary(){}
 
     public Veterinary(String name){
-        this.name=name();
+        this.name=name;
     }
 
     public long getId(){
