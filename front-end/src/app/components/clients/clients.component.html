@@ -8,13 +8,13 @@
 	<nav id="selectbar">
 		<ul>
 			<li><a class="menuSelect" routerLink="/clients">Clients</a></li>
-		  	<li><a class="menuSelect" routerLink="/doctors">Doctors</a></li>
+		  	<li><a class="menuSelect" routerLink="/doctors">Veterinary</a></li>
 			<li><a class="menuSelect" routerLink="/rooms">Rooms</a></li>
 		</ul>
 	</nav>
 	<main id="main">
     <div class="content">
-		<a routerLink="create">Add a new client</a><br/>
+		<a routerLink="create">Add a new client</a><br/><br/>
 			These are the clients :
 			<ul>
 				<li *ngFor="let cli of clients"
