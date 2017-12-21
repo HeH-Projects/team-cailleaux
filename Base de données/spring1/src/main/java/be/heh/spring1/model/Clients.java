@@ -74,6 +74,6 @@ public class Clients implements Serializable {
 
     @Override
     public String toString(){
-        return String.format("Client[id=%d, firstName='%s', lastName='%s', phoneNumber='%s', address='%s'");
+        return String.format("Clients[id=%d, firstName='%s', lastName='%s', phoneNumber='%s', address='%s'");
     }
 }

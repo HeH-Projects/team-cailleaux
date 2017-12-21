@@ -9,13 +9,13 @@ public class Animal implements Serializable {
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
-    private long numAnimal;
+    private long id;
 
     @Column(name="numOwner")
-    private long numOwner;
+    private int numOwner;
 
     @Column(name="numVet")
-    private long numVet;
+    private int numVet;
 
     @Column(name="name")
     private String name;
@@ -32,7 +32,7 @@ public class Animal implements Serializable {
 
     protected Animal(){}
 
-    public Animal(long numOwner, long numVet, String name, char sex, String species, Timestamp birthDate){
+    public Animal(int numOwner, int numVet, String name, char sex, String species, Timestamp birthDate){
         this.numOwner=numOwner();
         this.numVet=numVet();
         this.name=name();
@@ -42,18 +42,18 @@ public class Animal implements Serializable {
     }
 
     public long getId(){
-        return numAnimal;
+        return id;
     }
 
-    public void setId(long numAnimal) {
-        this.numAnimal = numAnimal;
+    public void setId(long id) {
+        this.id = id;
     }
 
-    public long getNumOwner(){return numOwner;}
-    public void setNumOwner(long numOwner){this.numOwner=numOwner;}
+    public int getNumOwner(){return numOwner;}
+    public void setNumOwner(int numOwner){this.numOwner=numOwner;}
 
-    public long getNumVet(){return numVet;}
-    public void setNumVet(long numVet){this.numVet=numVet;}
+    public int getNumVet(){return numVet;}
+    public void setNumVet(int numVet){this.numVet=numVet;}
 
     public String getName(){
         return name;
@@ -87,6 +87,6 @@ public class Animal implements Serializable {
 
     @Override
     public String toString(){
-        return String.format("Animal[numAnimal=%d, numOwner='%d', numVet='%d', name='%s', sex='%c', species='%s', birthDate='%s'");
+        return String.format("Animal[id=%d, numOwner=%d, numVet=%d, name='%s', sex='%c', species='%s', birthDate='%s'");
     }
 }
