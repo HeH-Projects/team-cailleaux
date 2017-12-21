@@ -24,6 +24,7 @@ export class DataService {
 
   //Add clients to the database
   create(client: Clients): Promise<Clients> {
+    console.log(JSON.stringify(client));
     return this.http.post("postclient", JSON.stringify(client), {headers: this.headers}).toPromise().then(res => res.json() as Clients).catch(this.handleError);
   }
 
