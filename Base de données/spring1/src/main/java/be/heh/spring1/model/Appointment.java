@@ -21,16 +21,16 @@ public class Appointment implements Serializable {
     private int numAnimal;
 
     @Column(name="date")
-    private Timestamp date;
+    private String date;
 
 
     protected Appointment(){}
 
-    public Appointment(int numRoom, int numVet, int numAnimal, Timestamp date){
-        this.numRoom=numRoom();
-        this.numVet=numVet();
-        this.numAnimal=numAnimal();
-        this.date=date();
+    public Appointment(int numRoom, int numVet, int numAnimal, String date){
+        this.numRoom=numRoom;
+        this.numVet=numVet;
+        this.numAnimal=numAnimal;
+        this.date=date;
     }
 
     public long getId(){
@@ -50,11 +50,11 @@ public class Appointment implements Serializable {
     public int getNumAnimal(){return numAnimal;}
     public void setNumAnimal(int numAnimal){this.numAnimal=numAnimal;}
 
-    public Timestamp date(){
+    public String date(){
         return date;
     }
 
-    public void setDate(Timestamp date){
+    public void setDate(String date){
         this.date=date;
     }
 
