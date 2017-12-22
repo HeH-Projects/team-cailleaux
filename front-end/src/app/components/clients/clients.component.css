@@ -27,32 +27,12 @@ ul {
 	list-style: none;
 }
 
-#selectbar {	
-    margin: 0 auto;
-    height: 50px;
-    display: block;
-	background-color: #F0F5FF;
-	text-align: center;
-	border-collapse: separate;
-	border-spacing: 20px 0;
+a {
+	text-decoration: none;
 }
 
 #main {
 	overflow: hidden;
-}
-
-.menuSelect {
-	padding: 10px;
-	font-size: 24px;
-	text-decoration: none;
-	cursor: pointer;
-    float: left;
-	transition: 0.2s;
-}
-
-.menuSelect:hover {
-	background-color: #F0F5FF;
-	color: cornflowerblue;
 }
 
 .content {
