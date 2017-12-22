@@ -2,10 +2,9 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Doctors</title>
+	<title>Clients</title>
 </head>
 <body>
-<<<<<<< HEAD
 	<nav id="selectbar">
 		<ul>
 			<li><a class="menuSelect" routerLink="/clients">Clients</a></li>
@@ -13,18 +12,9 @@
 			<li><a class="menuSelect" routerLink="/rooms">Rooms</a></li>
 		</ul>
 	</nav>
-=======
->>>>>>> dev
 	<main id="main">
     <div class="content">
-		<a routerLink="create">Add a new doctor</a><br/>
-			These are the doctors :
-			<ul>
-				<li *ngFor="let doc of doctor"
-				[class.selected]="doc === selectedDoctor" (click)="onSelect(doc)">
-				<h4>{{doc.id}} - {{doc.firstName}} {{doc.lastName}} <button (click)="delete(doc)">X</button> </h4>
-			</li>
-		</ul>
+      These are the doctors :
     </div>
 	</main>
 </body>

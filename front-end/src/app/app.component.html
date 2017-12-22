@@ -2,8 +2,12 @@
 <html>
 <head>
 	<meta charset="utf-8">
+<<<<<<< HEAD
   <title>Accueil</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>">
+=======
+	<title>Accueil</title>
+>>>>>>> parent of 833374f... Merge branch 'dev'
 </head>
 <body>
 	<header id="header">  
@@ -11,7 +15,6 @@
     <nav id="menubar">
       <ul>
         <li><div id=name>{{title}}</div></li>
-<<<<<<< HEAD
         <li><a class="menu" routerLink="/clients">Management</a></li>
         <li><a class="menu" routerLink="/agenda">Agenda</a></li>
      </ul>
@@ -21,47 +24,5 @@
 	<footer>
 		Designed by Team Cailleaux.
 	</footer>
-=======
-        <li><a class="menu" routerLink="/clients" (click)="nav('gestion')" (click)="current = 'clients'">Gestion</a></li>
-        <li><a class="menu" routerLink="/agenda"  (click)="nav('agenda')">Agenda</a></li>
-      </ul>
-    </nav>
-    <nav id="selectbar">
-      <div id="agenda" [hidden]="!agenda">
-        <ul class="inline-list">
-          <li><a class="menuSelect" id="dateSelect">combodate</a></li>
-          <li><a class="menuSelect" id="date">date</a></li>
-          <li><a class="menuSelect">&#8592;</a></li>
-          <li><a class="menuSelect">&#8594;</a></li>
-        </ul>
-      </div>
-      <div id="gestion" [hidden]="agenda">
-        <ul class="inline-list">              
-          <li><a class="menuSelect" routerLink="/clients" [style.border-color]="setCurrent('clients')" (click)="current = 'clients'">Clients</a></li>
-          <li><a class="menuSelect" routerLink="/doctors" [style.border-color]="setCurrent('doctors')" (click)="current = 'doctors'">Doctors</a></li>
-          <li><a class="menuSelect" routerLink="/rooms" [style.border-color]="setCurrent('rooms')" (click)="current = 'rooms'">Rooms</a></li>
-        </ul>
-      </div>
-      
-    </nav>
-  </header> 
-  <router-outlet></router-outlet>
-	<footer>
-		Team Cailleaux 💪😂💯👌.
-  </footer>
-  <script>
-    
-  var agenda = true;
-
-  $('document').ready(function () {
-    console.log("Prêt à l'emploi !");
-    $('#date').html('C LA DATE SALE PUTE');
-  });
-
-  $('.menuSelect').click(function() {
-    alert("Cliqué !");
-  });
-  </script>
->>>>>>> dev
 </body>
 </html>

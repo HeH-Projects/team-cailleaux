@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # Vet Manager
+=======
+# A4app
+>>>>>>> parent of 833374f... Merge branch 'dev'
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.5.0.
 

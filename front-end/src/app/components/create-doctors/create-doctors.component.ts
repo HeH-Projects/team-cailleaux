@@ -1,10 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-<<<<<<< HEAD
-=======
-import { Doctors } from '../../doctors';
-import { DataService } from '../../data.service';
-import { Location } from '@angular/common';
->>>>>>> dev
 
 @Component({
   selector: 'app-create-doctors',
@@ -13,26 +7,9 @@ import { Location } from '@angular/common';
 })
 export class CreateDoctorsComponent implements OnInit {
 
-<<<<<<< HEAD
   constructor() { }
 
   ngOnInit() {
   }
-=======
-  doctor = new Doctors;
-
-  constructor(private dataService: DataService, private location: Location) { }
-
-  ngOnInit() {
-  }
-  
-  private save(): void{
-    this.dataService.create('doctor', this.doctor).then(() => this.goBack());
-  }
-  
-  goBack(): void{
-    window.location.replace("#/doctors");
-  }
->>>>>>> dev
 
 }
