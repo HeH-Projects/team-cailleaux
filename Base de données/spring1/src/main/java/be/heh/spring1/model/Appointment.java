@@ -50,7 +50,7 @@ public class Appointment implements Serializable {
     public int getNumAnimal(){return numAnimal;}
     public void setNumAnimal(int numAnimal){this.numAnimal=numAnimal;}
 
-    public String date(){
+    public String getDate(){
         return date;
     }
 

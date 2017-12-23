@@ -14,7 +14,13 @@
 	</nav>
 	<main id="main">
     <div class="content">
-      These are the doctors :
+	  These are the doctors :
+	  <ul>
+		  <li *ngFor="let doc of doctors">
+			  <h4>{{doc.id}} - {{doc.name}} <button (click)="delete(doc)">X</button>
+				</h4>
+		  </li>
+	  </ul>
     </div>
 	</main>
 </body>

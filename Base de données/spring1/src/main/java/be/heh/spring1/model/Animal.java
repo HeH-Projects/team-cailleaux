@@ -63,7 +63,7 @@ public class Animal implements Serializable {
         this.name=name;
     }
 
-    public char sex(){ return sex; }
+    public char getSex(){ return sex; }
 
     public void setSex(char sex){
         this.sex=sex;
@@ -77,7 +77,7 @@ public class Animal implements Serializable {
         this.species=species;
     }
 
-    public String birthDate(){
+    public String getBirthDate(){
         return birthDate;
     }
 

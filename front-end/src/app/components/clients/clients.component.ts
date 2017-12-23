@@ -15,7 +15,7 @@ export class ClientsComponent implements OnInit {
   constructor(private dataService: DataService) { }
 
   getClients(){
-    this.dataService.getClients().then(clients => this.clients = clients);
+    this.dataService.get('client').then(clients => this.clients = clients);
   }
 
   ngOnInit(): void {
@@ -28,7 +28,7 @@ export class ClientsComponent implements OnInit {
 
   delete(cli: Clients): void{
     console.log(cli.id);
-    this.dataService.delete(cli.id).then(() => this.reload());
+    this.dataService.delete(cli.id, 'client').then(() => this.reload());
   }
 
   reload(): void {
