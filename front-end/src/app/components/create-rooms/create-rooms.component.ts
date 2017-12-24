@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../../data.service';
+import { Location } from '@angular/common';
+import { Rooms } from '../../rooms';
 
 @Component({
   selector: 'app-create-rooms',
@@ -7,9 +10,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateRoomsComponent implements OnInit {
 
-  constructor() { }
+  room = new Rooms;
+
+  constructor(private dataService: DataService, private location: Location) { }
 
   ngOnInit() {
+  }
+
+  private save(): void{
+    this.dataService.createRooms(this.room).then(() => this.goBack());
+  }
+
+  goBack(): void{
+    window.location.replace("#/rooms");
   }
 
 }

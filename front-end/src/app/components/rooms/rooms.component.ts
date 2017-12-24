@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Rooms } from '../../rooms'
+import { DataService } from '../../data.service';
 
 @Component({
   selector: 'app-rooms',
@@ -6,10 +8,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./rooms.component.css']
 })
 export class RoomsComponent implements OnInit {
+  rooms: Rooms[];
 
-  constructor() { }
+  constructor(private dataService: DataService) { }
 
-  ngOnInit() {
+  getRooms(): void{
+    this.dataService.get('room').then(rooms => this.rooms = rooms);
+  }
+
+  ngOnInit(): void{
+    this.getRooms();
+  }
+
+  delete(room: Rooms): void{
+    this.dataService.delete(room.id, 'room').then(() => this.reload());
+  }
+
+  reload(): void{
+    window.location.reload();
   }
 
 }

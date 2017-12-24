@@ -18,7 +18,7 @@ export class CreateClientsComponent implements OnInit {
   }
 
   private save(): void{
-    this.dataService.create(this.client).then(() => this.goBack());
+    this.dataService.createClient(this.client).then(() => this.goBack());
   }
 
   goBack(): void{

@@ -4,6 +4,7 @@ import 'rxjs/add/operator/toPromise';
 
 import { Clients } from './clients';
 import { Doctors } from './doctors';
+import { Rooms } from './rooms';
 
 @Injectable()
 export class DataService {
@@ -25,16 +26,16 @@ export class DataService {
       case 'doctor':
         return this.http.get(this.doctorsUrl).toPromise().then(response=> response.json() as Doctors[]).catch(this.handleError);
       case 'animal':
-
+        //return this.http.get(this.animalUrl).toPromise().then(response => response.json() as ).catch(this.handleError);
       case 'room':
-
+        return this.http.get(this.roomUrl).toPromise().then(response => response.json() as Rooms[]).catch(this.handleError);
       case 'appointment':
-
+        //return this.http.get(this.appointmentUrl).toPromise().then(response => response.json() as ).catch(this.handleError);
 
     }
   }
 
-  //fetch clients by lastname
+  //fetch clients or veterinaries by lastname
   getByLastName(type: string,lastName: string): Promise<any>{
     const url = `findbylastname/${lastName}`;
     switch(type){
@@ -43,12 +44,6 @@ export class DataService {
       case 'doctor':
         return this.http.get(url).toPromise().then(response => response.json() as Doctors[]).catch(this.handleError);
     }
-  }
-
-  //Add clients to the database
-  create(client: Clients): Promise<Clients> {
-    console.log(JSON.stringify(client));
-    return this.http.post("postclient", JSON.stringify(client), {headers: this.headers}).toPromise().then(res => res.json() as Clients).catch(this.handleError);
   }
 
   //delete client
@@ -62,6 +57,23 @@ export class DataService {
         url = `${this.doctorsUrl}/${id}`;
         return this.http.delete(url, {headers: this.headers}).toPromise().then(() => null).catch(this.handleError);
     }
+  }
+
+  //THESE METHODS ADD THE DIFFRENT INFOS TO THE DATABASE
+  
+  //Add clients to the database
+  createClient(client: Clients): Promise<Clients> {
+    console.log(JSON.stringify(client));
+    return this.http.post("postclient", JSON.stringify(client), {headers: this.headers}).toPromise().then(res => res.json() as Clients).catch(this.handleError);
+  }
+
+  //Add doctor to the database
+  createDoctor(doctor: Doctors): Promise<Doctors>{
+    return this.http.post("postvet", JSON.stringify(doctor), {headers: this.headers}).toPromise().then(res => res.json() as Doctors).catch(this.handleError);
+  }
+
+  createRooms(room: Rooms): Promise<Rooms>{
+    return this.http.post("postroom", JSON.stringify(room), {headers: this.headers}).toPromise().then(res => res.json() as Rooms).catch(this.handleError);
   }
 
   private handleError(error: any): Promise<any>{

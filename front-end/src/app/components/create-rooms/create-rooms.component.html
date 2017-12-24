@@ -1,3 +1,30 @@
-<p>
-  create-rooms works!
-</p>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Add a new </title>
+</head>
+<body>
+  <nav id="selectbar">
+    <ul>
+      <li><a class="menuSelect" routerLink="/clients">Clients</a></li>
+      <li><a class="menuSelect" routerLink="/doctors">Veterinary</a></li>
+      <li><a class="menuSelect" routerLink="/rooms">Rooms</a></li>
+    </ul>
+  </nav>
+	<main id="main">
+    <div class="content">
+      <form>
+        <div>
+          <label for="material">Material: </label>
+          <input type="text" id="material" required [(ngModel)]="room.material" name="material">
+        </div>
+        <div>
+          <button (click)="goBack()">Back</button>
+          <button (click)="save()" routerLink="/clients">Add</button>
+        </div>
+      </form>
+    </div>
+	</main>
+</body>
+</html>
