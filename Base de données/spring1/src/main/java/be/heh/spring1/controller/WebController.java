@@ -81,6 +81,13 @@ public class WebController {
         return list;
     }
 
+    @GetMapping(value="/findvetbyname/{lastName}", produces=MediaType.APPLICATION_JSON_VALUE)
+    public List<Veterinary> findVetByLastName(@PathVariable String lastName){
+        //we use the method of the inteface ClientsRepository
+        List<Veterinary> vet = repoVet.findByName(lastName);
+        return vet;
+    }
+
     @PostMapping(value="/postvet")
     public Veterinary postVet(@RequestBody Veterinary vet){
         repoVet.save(new Veterinary(vet.getName()));
@@ -104,6 +111,13 @@ public class WebController {
         //we add each elements of "rooms" to the list
         rooms.forEach(list::add);
         return list;
+    }
+
+    @GetMapping(value="/findroombyid/{id}", produces=MediaType.APPLICATION_JSON_VALUE)
+    public List<Room> findRoomById(@PathVariable long id){
+        //we use the method of the inteface ClientsRepository
+        List<Room> rooms = repoRoom.findById(id);
+        return rooms;
     }
 
     @PostMapping(value="/postroom")
@@ -133,6 +147,12 @@ public class WebController {
         return list;
     }
 
+    @GetMapping(value="/findanimalbyname/{name}", produces= MediaType.APPLICATION_JSON_VALUE)
+    public List<Animal> getAnimalByName(@PathVariable String name){
+        List<Animal> animals = repoAnimal.findByName(name);
+        return animals;
+    }
+
     @PostMapping(value="/postanimal")
     public Animal postAnimal(@RequestBody Animal animal){
         repoAnimal.save(new Animal(animal.getNumOwner(), animal.getNumVet(), animal.getName(), animal.getSex(), animal.getSpecies(), animal.getBirthDate()));
@@ -157,6 +177,12 @@ public class WebController {
         //we add each elements of "appointments" to the list
         appointments.forEach(list::add);
         return list;
+    }
+
+    @GetMapping(value="/findappointmentbyid/{id}", produces= MediaType.APPLICATION_JSON_VALUE)
+    public List<Appointment> getAppointmentById(@PathVariable long id){
+        List<Appointment> appointments = repoAppointment.findById(id);
+        return appointments;
     }
 
     @PostMapping(value="/postappointment")

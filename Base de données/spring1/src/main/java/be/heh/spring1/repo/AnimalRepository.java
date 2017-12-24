@@ -5,5 +5,5 @@ import org.springframework.data.repository.CrudRepository;
 import be.heh.spring1.model.Animal;
 
 public interface AnimalRepository extends CrudRepository<Animal, Long>{
-    List<Animal> findAllByName(String name);
+    List<Animal> findByName(String name);
 }
