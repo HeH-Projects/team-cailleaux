@@ -23,7 +23,7 @@ export class ClientsComponent implements OnInit {
   }
 
   onSelect(cli: Clients): void {
-    this.selectedClient = cli;  
+    this.selectedClient = cli;
   }
 
   delete(cli: Clients): void{

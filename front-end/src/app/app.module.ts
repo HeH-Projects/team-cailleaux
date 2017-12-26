@@ -18,10 +18,10 @@ import { AgendaComponent } from './components/agenda/agenda.component';
 import { CreateClientsComponent } from './components/create-clients/create-clients.component';
 import { CreateDoctorsComponent } from './components/create-doctors/create-doctors.component';
 import { CreateRoomsComponent } from './components/create-rooms/create-rooms.component';
+import { ClientsInfosComponent } from './components/clients-infos/clients-infos.component';
 
 //import all the services
 import { DataService } from './data.service';
-
 
 @NgModule({
   declarations: [
@@ -32,7 +32,9 @@ import { DataService } from './data.service';
     AgendaComponent,
     CreateClientsComponent,
     CreateDoctorsComponent,
-    CreateRoomsComponent
+    CreateRoomsComponent,
+    ClientsInfosComponent,
+    ClientsInfosComponent
   ],
   imports: [
     BrowserModule,
