@@ -90,7 +90,7 @@ public class WebController {
 
     @PostMapping(value="/postvet")
     public Veterinary postVet(@RequestBody Veterinary vet){
-        repoVet.save(new Veterinary(vet.getName()));
+        repoVet.save(new Veterinary(vet.getFirstName(), vet.getLastName()));
         return vet;
     }
 
