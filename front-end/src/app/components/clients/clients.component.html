@@ -14,7 +14,7 @@
 	</nav>
 	<main id="main">
     <div class="content">
-		<a id="add" routerLink="create">Add a new client</a>
+		<a id="add" routerLink="create">New client</a>
 			<ul>
 				<li class="client" *ngFor="let cli of clients"
 				[class.selected]="cli === selectedClient" (click)="onSelect(cli)">

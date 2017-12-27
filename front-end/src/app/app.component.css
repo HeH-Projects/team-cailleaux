@@ -50,12 +50,12 @@ ul {
 }
 
 .menu {
-	padding: 20px;
-	font-size: 26px;
+	padding: 21px;
+	font-size: 27px;
 	text-decoration: none;
 	color: #F0F5FF;
 	cursor: pointer;
-    float: right;
+	float: right;
 	transition: 0.2s;
 }
 
