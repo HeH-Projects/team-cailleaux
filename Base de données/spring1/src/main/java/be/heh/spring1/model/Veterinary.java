@@ -11,13 +11,17 @@ public class Veterinary implements Serializable {
     @GeneratedValue(strategy= GenerationType.AUTO)
     private long id;
 
-    @Column(name="name")
-    private String name;
+    @Column(name="firstName")
+    private String firstName;
+
+    @Column (name="lastName")
+    private String lastName;
 
     protected Veterinary(){}
 
-    public Veterinary(String name){
-        this.name=name;
+    public Veterinary(String firstName, String lastName){
+        this.firstName=firstName;
+        this.lastName=lastName;
     }
 
     public long getId(){
@@ -28,16 +32,20 @@ public class Veterinary implements Serializable {
         this.id = id;
     }
 
-    public String getName(){
-        return name;
+    public String getFirstName(){
+        return firstName;
     }
 
-    public void setName(String name){
-        this.name=name;
+    public void setFirstName(String firstName){
+        this.firstName=firstName;
     }
+
+    public String getLastName() {return lastName;}
+
+    public void setLastName(String lastName){this.lastName=lastName;}
 
     @Override
     public String toString(){
-        return String.format("Veterinary[id=%d, name='%s'");
+        return String.format("Veterinary[id=%d, firstName='%s', lastName='%s'");
     }
 }

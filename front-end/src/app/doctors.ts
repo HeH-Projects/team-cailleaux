@@ -1,4 +1,5 @@
 export class Doctors {
     public id: number;
-    public name: string;
+    public firstName: string;
+    public lastName: string;
 }
