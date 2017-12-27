@@ -1,4 +1,4 @@
-/*SET DE COULEURS : 
+/*SET DE COULEURS :
 	Blanc :	#F0F5FF
 	Noir :		#446
 	turquoise :		#73aeab
@@ -14,7 +14,6 @@ html {
 	font-size: 20px;
 	color: #446;
     background-color: #F0F5FF;
-	text-align: center;
 }
 
 body {
@@ -23,14 +22,27 @@ body {
 }
 
 ul {
+  padding: 0;
 	margin: 0;
 	list-style: none;
 }
 
-#selectbar {	
-    margin: 0 auto;
-    height: 50px;
-    display: block;
+h4{
+  margin: 7px;
+}
+
+p{
+  margin: 7px;
+}
+
+a {
+  text-decoration: none;
+}
+
+#selectbar {
+  margin: 0 auto;
+  height: 50px;
+  display: block;
 	background-color: #F0F5FF;
 	text-align: center;
 	border-collapse: separate;
@@ -41,12 +53,27 @@ ul {
 	overflow: hidden;
 }
 
+#add {
+  padding: 10px;
+  border-radius: 10px;
+  color: #F0F5FF;
+  background-color: cornflowerblue;
+  float: right;
+  position: fixed;
+  transition: 0.2s;
+}
+
+#add:hover {
+  background-color: #F0F5FF;
+  color: cornflowerblue;
+}
+
 .menuSelect {
 	padding: 10px;
 	font-size: 24px;
 	text-decoration: none;
 	cursor: pointer;
-    float: left;
+  float: left;
 	transition: 0.2s;
 }
 
@@ -64,3 +91,43 @@ ul {
 	text-align: justify;
 	overflow: auto;
 }
+
+.client{
+  border-radius: 15px;
+  background-color: #F0F5FF;
+  padding: 5px 15px;
+  margin-top: 20px;
+  width: 50%;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.client:hover {
+  background-color: cornflowerblue;
+  color: #F0F5FF;
+}
+
+.txtClient{
+  margin: 0;
+  padding: 0;
+}
+
+/*.modButton{
+  transition: 0.3s;
+  border-radius: 10px;
+  color: #F0F5FF;
+  background-color: cornflowerblue;
+  border-style: none;
+  width: 6em;
+  height: 2em;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.modButton:hover{
+  transition: 0.3s;
+  color: #446;
+  background-color: #F0F5FF;
+  border-color: #AACCFF;
+}*/

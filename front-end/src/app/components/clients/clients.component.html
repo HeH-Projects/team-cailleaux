@@ -8,19 +8,20 @@
 	<nav id="selectbar">
 		<ul>
 			<li><a class="menuSelect" routerLink="/clients">Clients</a></li>
-		  	<li><a class="menuSelect" routerLink="/doctors">Veterinary</a></li>
+      <li><a class="menuSelect" routerLink="/doctors">Veterinary</a></li>
 			<li><a class="menuSelect" routerLink="/rooms">Rooms</a></li>
 		</ul>
 	</nav>
 	<main id="main">
     <div class="content">
-		<a routerLink="create">Add a new client</a><br/><br/>
-			These are the clients :
+		<a id="add" routerLink="create">Add a new client</a>
 			<ul>
-				<li *ngFor="let cli of clients"
+				<li class="client" *ngFor="let cli of clients"
 				[class.selected]="cli === selectedClient" (click)="onSelect(cli)">
-				<h4>{{cli.id}} - {{cli.firstName}} {{cli.lastName}} <button (click)="delete(cli)">X</button> </h4>
-				<p>Phone Number: {{cli.phoneNumber}} <br/> Address: {{cli.address}}</p>
+				<div class="txtClient">
+          <h4>{{cli.firstName}} {{cli.lastName}}</h4>
+          <p>{{cli.address}}</p>
+        </div>
 			</li>
 		</ul>
     </div>
