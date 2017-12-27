@@ -19,7 +19,7 @@
 			<ul>
 				<li *ngFor="let cli of clients"
 				[class.selected]="cli === selectedClient" (click)="onSelect(cli)">
-				<h4><a routerLink="infos">{{cli.id}} - {{cli.firstName}} {{cli.lastName}}</a> <button (click)="delete(cli)">X</button></h4>
+				<h4><a routerLink="infos">{{cli.firstName}} {{cli.lastName}} {{cli.address}}</a> <button (click)="delete(cli)">X</button></h4>
 			</li>
 		</ul>
     </div>
