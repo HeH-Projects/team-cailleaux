@@ -105,12 +105,22 @@
       <file leaf-file-name="Veterinary.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Base de données/spring1/src/main/java/be/heh/spring1/model/Veterinary.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="16" column="24" lean-forward="false" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
+            <state relative-caret-position="-17">
+              <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
               <folding>
                 <element signature="e#957#958#0" expanded="true" />
                 <element signature="e#1044#1045#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="create-doctors.component.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/front-end/src/app/components/create-doctors/create-doctors.component.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="23" column="20" lean-forward="false" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="20" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -170,6 +180,7 @@
         <option value="$PROJECT_DIR$/Base de données/spring1/src/main/java/be/heh/spring1/model/Appointment.java" />
         <option value="$PROJECT_DIR$/Base de données/spring1/src/main/java/be/heh/spring1/model/Animal.java" />
         <option value="$PROJECT_DIR$/Base de données/spring1/src/main/java/be/heh/spring1/model/Veterinary.java" />
+        <option value="$PROJECT_DIR$/front-end/src/app/components/create-doctors/create-doctors.component.html" />
       </list>
     </option>
   </component>
@@ -298,24 +309,37 @@
             <path>
               <item name="team-cailleaux" type="b2602c69:ProjectViewProjectNode" />
               <item name="team-cailleaux" type="462c0819:PsiDirectoryNode" />
-              <item name="Base de données" type="462c0819:PsiDirectoryNode" />
-              <item name="spring1" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="be" type="462c0819:PsiDirectoryNode" />
-              <item name="heh" type="462c0819:PsiDirectoryNode" />
-              <item name="spring1" type="462c0819:PsiDirectoryNode" />
-              <item name="repo" type="462c0819:PsiDirectoryNode" />
+              <item name="front-end" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="team-cailleaux" type="b2602c69:ProjectViewProjectNode" />
               <item name="team-cailleaux" type="462c0819:PsiDirectoryNode" />
-              <item name="Base de données" type="462c0819:PsiDirectoryNode" />
-              <item name="spring1" type="462c0819:PsiDirectoryNode" />
+              <item name="front-end" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="team-cailleaux" type="b2602c69:ProjectViewProjectNode" />
+              <item name="team-cailleaux" type="462c0819:PsiDirectoryNode" />
+              <item name="front-end" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="team-cailleaux" type="b2602c69:ProjectViewProjectNode" />
+              <item name="team-cailleaux" type="462c0819:PsiDirectoryNode" />
+              <item name="front-end" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="team-cailleaux" type="b2602c69:ProjectViewProjectNode" />
+              <item name="team-cailleaux" type="462c0819:PsiDirectoryNode" />
+              <item name="front-end" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="create-doctors" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -448,12 +472,12 @@
       <workItem from="1511275460075" duration="2211000" />
       <workItem from="1513850350408" duration="596000" />
       <workItem from="1513852015586" duration="8736000" />
-      <workItem from="1514367908963" duration="3002000" />
+      <workItem from="1514367908963" duration="4712000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14545000" />
+    <option name="totallyTimeSpent" value="16255000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
@@ -657,13 +681,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://table:/27ada4ac/4c10ec5d-fa54-4ca1-bea8-f14e4311bc09/dfsgd57fvfof9o.public.veterinary">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Base de données/spring1/src/main/java/be/heh/spring1/model/Clients.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="799">
@@ -672,10 +689,25 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/front-end/src/app/components/create-doctors/create-doctors.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="23" column="20" lean-forward="false" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/27ada4ac/4c10ec5d-fa54-4ca1-bea8-f14e4311bc09/dfsgd57fvfof9o.public.veterinary">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Base de données/spring1/src/main/java/be/heh/spring1/model/Veterinary.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="16" column="24" lean-forward="false" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
+        <state relative-caret-position="-17">
+          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
           <folding>
             <element signature="e#957#958#0" expanded="true" />
             <element signature="e#1044#1045#0" expanded="true" />
