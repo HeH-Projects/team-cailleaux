@@ -18,7 +18,7 @@
 	  These are the doctors :
 	  <ul>
 		  <li *ngFor="let doc of doctors">
-			  <h4>{{doc.id}} - {{doc.name}} <button (click)="delete(doc)">X</button>
+			  <h4>{{doc.id}} - {{doc.lastName}} {{doc.firstName}} <button (click)="delete(doc)">X</button>
 				</h4>
 		  </li>
 	  </ul>
