@@ -1,30 +1,19 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<title>Clients</title>
-</head>
-<body>
-	<nav id="selectbar">
-		<ul>
-			<li><a class="menuSelect" routerLink="/clients">Clients</a></li>
-      <li><a class="menuSelect" routerLink="/doctors">Veterinary</a></li>
-			<li><a class="menuSelect" routerLink="/rooms">Rooms</a></li>
-		</ul>
-	</nav>
-	<main id="main">
-    <div class="content">
-		<a id="add" routerLink="create">New client</a>
-			<ul>
-				<li class="client" *ngFor="let cli of clients"
-				[class.selected]="cli === selectedClient" (click)="onSelect(cli)">
-				<div class="txtClient">
-          <h4>{{cli.firstName}} {{cli.lastName}}</h4>
-          <p>{{cli.address}}</p>
-        </div>
-			</li>
-		</ul>
-    </div>
-	</main>
-</body>
-</html>
+<nav id="selectbar">
+	<ul>
+		<li><a class="menuSelect" routerLink="/clients">Clients</a></li>
+      	<li><a class="menuSelect" routerLink="/doctors">Veterinary</a></li>
+		<li><a class="menuSelect" routerLink="/rooms">Rooms</a></li>
+	</ul>
+</nav>
+<main id="main">
+	<a id="add" class="butt" routerLink="create">New client</a>
+	<h1>Clients list</h1>
+	<ul>
+		<li class="item" *ngFor="let cli of clients" [class.selected]="cli === selectedClient" (click)="onSelect(cli)">
+			<div class="itemtxt">
+       			<h3>{{cli.firstName}} {{cli.lastName}}</h3>
+       			<p>{{cli.address}}</p>
+       		</div>
+		</li>
+	</ul>
+</main>

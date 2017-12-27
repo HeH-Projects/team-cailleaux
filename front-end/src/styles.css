@@ -1,1 +1,150 @@
-/* You can add global styles to this file, and also import other style files */
+/*SET DE COULEURS :
+    Blanc : #F0F5FF
+    Noir: ##446
+    Bleu clair : #AACCFF
+    Bleu foncé : cornflowerblue
+*/
+
+html {
+  margin: 0;
+  padding: 0;
+  font-family: Calibri;
+  font-size: 20px;
+  color: #446;
+  background-color: #F0F5FF;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+h1 {
+  margin: 0 0 20px 0;
+}
+
+h3 {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+  
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+button {
+  border: none;
+}
+
+input {
+  padding: 5px;
+  margin: 5px;
+  border: none;
+}
+
+form {
+	margin-bottom: 30px;
+}
+
+#selectbar {
+  margin: 0 auto;
+  height: 50px;
+  background-color: #F0F5FF;
+  text-align: center;
+  border-spacing: 20px 0;
+}
+  
+#main {
+  height: auto;
+  padding: 30px;
+  color: #446;
+  background-color: #AACCFF;
+  border-bottom: 10px solid cornflowerblue;
+  text-align: justify;
+  overflow: auto;
+}
+  
+#add {
+  float: right;
+  position: fixed;
+  bottom: 40px;
+  right: 50px;}
+
+#footer {
+  padding: 8px;
+  text-align: center;
+}
+  
+.menuSelect {
+  padding: 10px;
+  font-size: 24px;
+  text-decoration: none;
+  cursor: pointer;
+  float: left;
+  display: inline-block;
+  transition: 0.2s;
+}
+
+.menuSelect:hover {
+    color: cornflowerblue;
+}
+  
+.item{
+  border-radius: 15px;
+  background-color: #F0F5FF;
+  padding: 10px 20px;
+  margin-top: 20px;
+  width: 60%;
+  transition: 0.2s;
+  cursor: pointer;
+}
+ 
+.item:hover {
+  padding-left: 30px;
+  background-color: cornflowerblue;
+  color: #F0F5FF;
+}
+
+.itemtxt{
+  margin: 0;
+  padding: 0;
+}
+
+.butt {  
+  padding: 10px;
+  width: 150px;
+  border-radius: 10px;
+  border: 3px solid cornflowerblue;
+  background-color: cornflowerblue;
+  color: #F0F5FF;
+  text-align: center;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.butt:hover {
+  background-color: rgba(240, 245, 255, 0.8); /*#F0F5FF*/
+  color: cornflowerblue;
+}
+
+.formfieldlong {
+  padding: 5px;
+}
+
+.textboxshort {
+  width: 150px;
+}
+
+.textboxlong {
+  width: 300px;
+}

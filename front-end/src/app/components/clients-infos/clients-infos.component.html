@@ -1,21 +1,11 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <title>Clients informations1</title>
-</head>
 <body>
     <nav id="selectbar">
-        <ul>
-            <li><a class="menuSelect" routerLink="/clients">Clients</a></li>
-            <li><a class="menuSelect" routerLink="/doctors">Vetenary</a></li>
-            <li><a class="menuSelect" routerLink="/rooms">Rooms</a></li>
-        </ul>
-    </nav>
-    <main id="main">
-        <div class="content">
-            <p>{{selectedClient.firstname}}</p>     
-        </div>
-    </main>
-</body>
-</html>
+    <ul>
+        <li><a class="menuSelect" routerLink="/clients">Clients</a></li>
+        <li><a class="menuSelect" routerLink="/doctors">Vetenary</a></li>
+        <li><a class="menuSelect" routerLink="/rooms">Rooms</a></li>
+    </ul>
+</nav>
+<main id="main">
+    <p>{{selectedClient.firstname}}</p>
+</main>

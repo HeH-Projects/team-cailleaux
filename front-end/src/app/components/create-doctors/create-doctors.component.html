@@ -1,34 +1,20 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<title>Add a new </title>
-</head>
-<body>
-  <nav id="selectbar">
-    <ul>
-      <li><a class="menuSelect" routerLink="/clients">Clients</a></li>
-      <li><a class="menuSelect" routerLink="/doctors">Veterinary</a></li>
-      <li><a class="menuSelect" routerLink="/rooms">Rooms</a></li>
-    </ul>
-  </nav>
-	<main id="main">
-    <div class="content">
-      <form>
-        <div>
-          <label for="firstName">First Name:</label>
-          <input type="text" id="firstName" required [(ngModel)]="doctor.firstName" name="firstName">
-          <br/>
-          <label for="lastName">Last Name:</label>
-          <input type="text" id="lastName" required [(ngModel)]="doctor.lastName" name="lastName">
-          <br/><br/>
-        </div>
-        <div>
-          <button (click)="goBack()">Back</button>
-          <button (click)="save()" routerLink="/doctor">Add</button>
-        </div>
-      </form>
+<nav id="selectbar">
+  <ul>
+    <li><a class="menuSelect" routerLink="/clients">Clients</a></li>
+    <li><a class="menuSelect" routerLink="/doctors">Veterinary</a></li>
+    <li><a class="menuSelect" routerLink="/rooms">Rooms</a></li>
+  </ul>
+</nav>
+<main id="main">
+  <h1>New veterinary</h1>
+  <form>
+    <div class="formfield">
+      <input class="textboxshort" type="text" id="firstName" required [(ngModel)]="doctor.firstName" name="firstName" placeholder="First name">
     </div>
-	</main>
-</body>
-</html>
+    <div class="formfield">
+      <input class="textboxshort" type="text" id="lastName" required [(ngModel)]="doctor.lastName" name="lastName" placeholder="Last name">
+    </div>
+  </form>      
+  <button class="butt" (click)="save()" routerLink="/doctor">Create</button>
+  <button class="butt" (click)="goBack()">Back</button>
+</main>

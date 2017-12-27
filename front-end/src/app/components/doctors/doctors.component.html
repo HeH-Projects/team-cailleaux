@@ -1,28 +1,18 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<title>Clients</title>
-</head>
-<body>
-	<nav id="selectbar">
-		<ul>
-			<li><a class="menuSelect" routerLink="/clients">Clients</a></li>
-			<li><a class="menuSelect" routerLink="/doctors">Veterinary</a></li>
-			<li><a class="menuSelect" routerLink="/rooms">Rooms</a></li>
-		</ul>
-	</nav>
-	<main id="main">
-    <div class="content">
-		<a routerLink="create">Add a new Veterinary</a><br/><br/>
-	  These are the doctors :
-	  <ul>
-		  <li *ngFor="let doc of doctors">
-			  <h4>{{doc.id}} - {{doc.lastName}} {{doc.firstName}} <button (click)="delete(doc)">X</button>
-				</h4>
-		  </li>
-	  </ul>
-    </div>
-	</main>
-</body>
-</html>
+<nav id="selectbar">
+	<ul>
+		<li><a class="menuSelect" routerLink="/clients">Clients</a></li>
+		<li><a class="menuSelect" routerLink="/doctors">Veterinary</a></li>
+		<li><a class="menuSelect" routerLink="/rooms">Rooms</a></li>
+	</ul>
+</nav>
+<main id="main">
+	<a id="add" class="butt" routerLink="create">New veterinary</a>
+	<h1>Veterinarians list</h1>
+	<ul>
+		<li class="item" *ngFor="let doc of doctors">
+			<div class="itemtxt">
+				<h3>{{doc.firstName}} {{doc.lastName}} <button class="butt" (click)="delete(doc)">Delete</button></h3>
+			</div>			  
+		</li>
+	</ul>
+</main>
