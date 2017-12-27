@@ -6,5 +6,5 @@ import org.springframework.data.repository.CrudRepository;
 import java.util.List;
 
 public interface VeterinaryRepository extends CrudRepository<Veterinary, Long>{
-	List<Veterinary> findByName(String name);
+	List<Veterinary> findByLastName(String lastName);
 }

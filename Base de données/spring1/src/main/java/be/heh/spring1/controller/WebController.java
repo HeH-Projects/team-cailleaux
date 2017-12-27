@@ -84,7 +84,7 @@ public class WebController {
     @GetMapping(value="/findvetbyname/{lastName}", produces=MediaType.APPLICATION_JSON_VALUE)
     public List<Veterinary> findVetByLastName(@PathVariable String lastName){
         //we use the method of the inteface ClientsRepository
-        List<Veterinary> vet = repoVet.findByName(lastName);
+        List<Veterinary> vet = repoVet.findByLastName(lastName);
         return vet;
     }
 
