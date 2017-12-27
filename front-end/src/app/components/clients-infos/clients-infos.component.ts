@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { DataService } from '../../data.service';
+import { Clients } from '../../clients';
+import { ClientsComponent } from '../clients/clients.component';
 
 @Component({
   selector: 'clients-infos',
@@ -7,9 +10,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ClientsInfosComponent implements OnInit {
 
-  constructor() { }
+  clientsComponent: ClientsComponent;
+
+  constructor(private dataService: DataService) { }
 
   ngOnInit() {
   }
-
 }

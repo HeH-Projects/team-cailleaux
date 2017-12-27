@@ -18,6 +18,10 @@ export class ClientsComponent implements OnInit {
     this.dataService.get('client').then(clients => this.clients = clients);
   }
 
+  getSelectedClient(): Clients{
+    return this.selectedClient;  
+  }
+
   ngOnInit(): void {
     this.getClients();
   }
