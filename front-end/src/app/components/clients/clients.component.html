@@ -9,7 +9,7 @@
 	<a id="add" class="butt" routerLink="create">New client</a>
 	<h1>Clients list</h1>
 	<ul>
-		<li class="item" *ngFor="let cli of clients" [class.selected]="cli === selectedClient" (click)="onSelect(cli)">
+		<li class="item" *ngFor="let cli of clients" [class.selected]="cli === selectedClient" (click)="onSelect(cli)" routerLink="infos">
 			<div class="itemtxt">
        			<h3>{{cli.firstName}} {{cli.lastName}}</h3>
        			<p>{{cli.address}}</p>

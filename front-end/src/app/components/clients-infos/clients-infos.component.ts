@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { DataService } from '../../data.service';
 import { Clients } from '../../clients';
 import { ClientsComponent } from '../clients/clients.component';
@@ -9,11 +9,13 @@ import { ClientsComponent } from '../clients/clients.component';
   styleUrls: ['./clients-infos.component.css']
 })
 export class ClientsInfosComponent implements OnInit {
-
-  clientsComponent: ClientsComponent;
+  //this is the client that is selected on the component Clients
+  cli: Clients;
 
   constructor(private dataService: DataService) { }
 
-  ngOnInit() {
+  ngOnInit() { 
+    //this subscribe to the variable currentClient that is in the DataService
+    this.dataService.currentClient.subscribe(cli => this.cli = cli);
   }
 }

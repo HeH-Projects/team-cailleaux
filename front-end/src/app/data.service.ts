@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Headers, Http } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
 import { Clients } from './clients';
 import { Doctors } from './doctors';
@@ -18,6 +19,11 @@ export class DataService {
 
   private headers = new Headers({'Content-Type': 'application/json'});
   
+  //this will contain the client that is selected in the client list
+  private clientSelected = new BehaviorSubject<Clients>(new Clients());
+  //this will transform the client in an Observable
+  currentClient = this.clientSelected.asObservable();
+
   constructor(private http: Http) { }
 
   //fetch all the clients
@@ -121,5 +127,11 @@ export class DataService {
   private handleError(error: any): Promise<any>{
     console.error('Error ', error);
     return Promise.reject(error.message || error);
+  }
+
+
+  //this method is used to change the variable "clientSelected"
+  changeMessage(cli: Clients){
+    this.clientSelected.next(cli);
   }
 }
