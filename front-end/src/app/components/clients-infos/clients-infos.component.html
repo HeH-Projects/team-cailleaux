@@ -8,5 +8,11 @@
 </nav>
 <main id="main">
     <h4>{{cli.firstName}} {{cli.lastName}}</h4>
+    <p>Address: {{cli.address}}<br/>
+    Phone Number: {{cli.phoneNumber}}</p>
+    <button class="butt" routerLink="addanimal">Add an animal</button>
+    <button class="butt">Modify</button>
+    <button class="butt" (click)="delete(cli)">Delete</button>
     
 </main>
+</body>

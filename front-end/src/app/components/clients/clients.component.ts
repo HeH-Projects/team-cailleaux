@@ -27,15 +27,6 @@ export class ClientsComponent implements OnInit {
     this.changeMessage();
   }
 
-  delete(cli: Clients): void{
-    console.log(cli.id);
-    this.dataService.delete(cli.id, 'client').then(() => this.reload());
-  }
-
-  reload(): void {
-    window.location.reload();
-  }
-
   //this method is used to change the client that is selected
   changeMessage(){
     this.dataService.changeMessage(this.selectedClient);

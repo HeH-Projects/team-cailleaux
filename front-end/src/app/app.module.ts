@@ -19,6 +19,7 @@ import { CreateClientsComponent } from './components/create-clients/create-clien
 import { CreateDoctorsComponent } from './components/create-doctors/create-doctors.component';
 import { CreateRoomsComponent } from './components/create-rooms/create-rooms.component';
 import { ClientsInfosComponent } from './components/clients-infos/clients-infos.component';
+import { AddAnimalComponent } from './components/add-animal/add-animal.component';
 
 //import all the services
 import { DataService } from './data.service';
@@ -34,7 +35,8 @@ import { DataService } from './data.service';
     CreateDoctorsComponent,
     CreateRoomsComponent,
     ClientsInfosComponent,
-    ClientsInfosComponent
+    ClientsInfosComponent,
+    AddAnimalComponent
   ],
   imports: [
     BrowserModule,

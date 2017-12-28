@@ -9,6 +9,7 @@ import { CreateClientsComponent } from './components/create-clients/create-clien
 import { CreateDoctorsComponent } from './components/create-doctors/create-doctors.component';
 import { CreateRoomsComponent } from './components/create-rooms/create-rooms.component';
 import { ClientsInfosComponent } from './components/clients-infos/clients-infos.component';
+import { AddAnimalComponent } from './components/add-animal/add-animal.component';
 
 const routes: Routes = [
     {path:'', redirectTo: 'agenda', pathMatch: 'full'},
@@ -19,7 +20,8 @@ const routes: Routes = [
     {path:'clients/create', component:CreateClientsComponent},
     {path:'doctors/create', component:CreateDoctorsComponent},
     {path: 'rooms/create', component:CreateRoomsComponent},
-    {path:'clients/infos', component:ClientsInfosComponent}
+    {path:'clients/infos', component:ClientsInfosComponent},
+    {path:'clients/infos/addanimal', component:AddAnimalComponent},
   ];
 
 @NgModule({
