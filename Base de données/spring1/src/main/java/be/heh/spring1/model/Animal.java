@@ -11,28 +11,28 @@ public class Animal implements Serializable {
     @GeneratedValue(strategy= GenerationType.AUTO)
     private long id;
 
-    @Column(name="numOwner")
+    @Column(name="numowner")
     private int numOwner;
 
-    @Column(name="numVet")
+    @Column(name="numvet")
     private int numVet;
 
     @Column(name="name")
     private String name;
 
     @Column(name="sex")
-    private char sex;
+    private String sex;
 
     @Column(name="species")
     private String species;
 
-    @Column(name="birthDate")
+    @Column(name="birthdate")
     private String birthDate;
 
 
     protected Animal(){}
 
-    public Animal(int numOwner, int numVet, String name, char sex, String species, String birthDate){
+    public Animal(int numOwner, int numVet, String name, String sex, String species, String birthDate){
         this.numOwner=numOwner;
         this.numVet=numVet;
         this.name=name;
@@ -63,9 +63,9 @@ public class Animal implements Serializable {
         this.name=name;
     }
 
-    public char getSex(){ return sex; }
+    public String getSex(){ return sex; }
 
-    public void setSex(char sex){
+    public void setSex(String sex){
         this.sex=sex;
     }
 

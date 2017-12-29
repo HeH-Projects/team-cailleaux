@@ -10,9 +10,18 @@
     <h4>{{cli.firstName}} {{cli.lastName}}</h4>
     <p>Address: {{cli.address}}<br/>
     Phone Number: {{cli.phoneNumber}}</p>
+
+    <h4>{{cli.lastName}}'s animals</h4>
+    <ul>
+            <li class="item" *ngFor="let animal of clientAnimals" [class.selected]="animal === selectedAnimal" (click)="onSelect(animal)" routerLink="">
+                    <div class="itemtxt">
+                           <h3>{{animal.name}}</h3>
+                       </div>
+                </li>
+    </ul>
+
     <button class="butt" routerLink="addanimal">Add an animal</button>
     <button class="butt">Modify</button>
     <button class="butt" (click)="delete(cli)">Delete</button>
-    
 </main>
 </body>

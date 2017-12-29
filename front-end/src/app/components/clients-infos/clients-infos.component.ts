@@ -12,25 +12,14 @@ import { Animal } from '../../animal';
 export class ClientsInfosComponent implements OnInit {
   //this is the client that is selected on the component Clients
   cli: Clients;
-  client: Clients;
 
-  animals: Animal[];
+  clientAnimals: Animal[];
   tempAnimals: Animal[];
 
   constructor(private dataService: DataService) { }
 
   getClientAnimals(){
-    this.dataService.get('animal').then(animals => this.tempAnimals = animals);
-    this.tempAnimals.forEach(animal => {
-      console.log(animal.name);
-      if(animal.id == this.cli.id){
-        this.animals.push(animal);
-      }
-    });
-
-    this.animals.forEach(animal => {
-      console.log(animal.id.toString());
-    });
+    this.dataService.getAnimals(this.cli.id).then(animals => this.clientAnimals = animals);
   }
 
   back(): void {
@@ -44,5 +33,7 @@ export class ClientsInfosComponent implements OnInit {
   ngOnInit() {
     //this subscribe to the variable currentClient that is in the DataService
     this.dataService.currentClient.subscribe(cli => this.cli = cli);
+    this.getClientAnimals();
   }
+
 }

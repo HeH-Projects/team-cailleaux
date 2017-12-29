@@ -42,6 +42,11 @@ export class DataService {
     }
   }
 
+  getClientByid(id: number): Promise<Clients>{
+    const url = `clients/infos/${id}`;
+    return this.http.get(url).toPromise().then(response => response.json() as Clients).catch(this.handleError);
+  }
+
   //fetch client by lastname
   getByLastName(lastName: string): Promise<Clients>{
     const url = `findbylastname/${lastName}`;
@@ -133,5 +138,10 @@ export class DataService {
   //this method is used to change the variable "clientSelected"
   changeMessage(cli: Clients){
     this.clientSelected.next(cli);
+  }
+
+  getAnimals(id: number): Promise<Animal[]>{
+    const url = `clients/infos/animals/${id}`;
+    return this.http.get(url).toPromise().then(response => response.json() as Animal).catch(this.handleError);
   }
 }

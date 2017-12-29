@@ -1,0 +1,23 @@
+<nav id="selectbar">
+  <ul>
+    <li><a class="menuSelect" routerLink="/clients">Clients</a></li>
+    <li><a class="menuSelect" routerLink="/doctors">Veterinary</a></li>
+    <li><a class="menuSelect" routerLink="/rooms">Rooms</a></li>
+  </ul>
+</nav>
+<main id="main">
+  <h1>Add an animal</h1>
+  <form>
+    <input class="textboxshort" type="text" id="name" required [(ngModel)]="animal.name" name="name" placeholder="Animal name">
+    <input class="textboxshort" type="text" id="sex" required [(ngModel)]="animal.sex" name="sex" placeholder="sex">
+    <input class="textboxshort" type="text" id="specie" required [(ngModel)]="animal.species" name="species" placeholder="Animal specie">
+    <input class="textboxshort" type="text" id="birthDate" required [(ngModel)]="animal.birthDate" name="birthDate" placeholder="Animal birthdate">
+    
+    <select [(ngModel)]="selectedVet" name="id" id="id" #Id="ngModel">
+      <option selected="selected" disabled>Veterinary's name...</option>
+      <option *ngFor="let vet of vetos" [ngValue]="vet">{{vet.lastName}}</option>
+    </select>
+  </form>
+  <button class="butt" (click)="save()" routerLink="/clients">Add</button>
+  <button class="butt" (click)="goBack()">Back</button>
+</main>
