@@ -154,17 +154,17 @@ public class WebController {
     }
 
     //this mapping will get the animals of a client that is determined by the id in the HTTP request GET
-    @GetMapping(value="/clients/infos/animals/{id}", produces= MediaType.APPLICATION_JSON_VALUE)
-    public List<Animal> getClientsAnimals(@PathVariable long id){
-        List<Animal> tempList = new ArrayList<>();
+    @GetMapping(value="/clients/infos/animals/{idCli}", produces= MediaType.APPLICATION_JSON_VALUE)
+    public List<Animal> getClientsAnimals(@PathVariable long idCli){
         List<Animal> list = new ArrayList<>();
+        List<Animal> listTemp = new ArrayList<>();
 
         Iterable<Animal> animals = repoAnimal.findAll();
+        
+        animals.forEach(listTemp::add);
 
-        animals.forEach(list::add);
-
-        for(Animal a : tempList){
-            if(a.getNumOwner() == id){
+        for(Animal a : listTemp){
+            if(a.getNumOwner() == idCli){
                 list.add(a);
             }
         }
