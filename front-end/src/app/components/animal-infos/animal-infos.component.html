@@ -1,0 +1,19 @@
+<body>
+    <nav id="selectbar">
+    <ul>
+        <li><a class="menuSelect" routerLink="/clients">Clients</a></li>
+        <li><a class="menuSelect" routerLink="/doctors">Veterinary</a></li>
+        <li><a class="menuSelect" routerLink="/rooms">Rooms</a></li>
+    </ul>
+</nav>
+<main id="main">
+    <h4>{{animal.name}} - {{animal.species}}</h4>
+    <p>Sex: {{animal.sex}}<br/>
+      Birth Date: {{animal.birthDate}}
+    </p>
+
+    <button class="butt">Modify</button>
+    <button class="butt" (click)="delete(animal)">Delete</button>
+    <button class="butt" (click)="back()">Back</button>
+</main>
+</body>

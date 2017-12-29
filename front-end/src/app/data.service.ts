@@ -24,6 +24,11 @@ export class DataService {
   //this will transform the client in an Observable
   currentClient = this.clientSelected.asObservable();
 
+  //this will contain the animal selected in the client info
+  private animalSelected = new BehaviorSubject<Animal>(new Animal());
+  //this will transform the animal in an Observable
+  currentAnimal = this.animalSelected.asObservable();
+
   constructor(private http: Http) { }
 
   //fetch all the clients
@@ -33,18 +38,17 @@ export class DataService {
         return this.http.get(this.clientsUrl).toPromise().then(response=> response.json() as Clients[]).catch(this.handleError);
       case 'doctor':
         return this.http.get(this.doctorsUrl).toPromise().then(response=> response.json() as Doctors[]).catch(this.handleError);
-      case 'animal':
-        return this.http.get(this.animalUrl).toPromise().then(response => response.json() as Animal[]).catch(this.handleError);
-      case 'room':
+     case 'room':
         return this.http.get(this.roomUrl).toPromise().then(response => response.json() as Rooms[]).catch(this.handleError);
       case 'appointment':
         return this.http.get(this.appointmentUrl).toPromise().then(response => response.json() as Appointment[]).catch(this.handleError);
     }
   }
-
-  getClientByid(id: number): Promise<Clients>{
-    const url = `clients/infos/${id}`;
-    return this.http.get(url).toPromise().then(response => response.json() as Clients).catch(this.handleError);
+  
+  //fetch the animals of a client
+  getAnimals(id: number): Promise<Animal[]>{
+    const url = `clients/infos/animals/${id}`;
+    return this.http.get(url).toPromise().then(response => response.json() as Animal).catch(this.handleError);
   }
 
   //fetch client by lastname
@@ -136,12 +140,12 @@ export class DataService {
 
 
   //this method is used to change the variable "clientSelected"
-  changeMessage(cli: Clients){
+  changeClientSelected(cli: Clients){
     this.clientSelected.next(cli);
   }
 
-  getAnimals(id: number): Promise<Animal[]>{
-    const url = `clients/infos/animals/${id}`;
-    return this.http.get(url).toPromise().then(response => response.json() as Animal).catch(this.handleError);
+  //this method is used to change the variable "animalSelected"
+  changeAnimalSelected(a: Animal){
+    this.animalSelected.next(a);
   }
 }

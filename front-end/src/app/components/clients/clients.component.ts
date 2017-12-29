@@ -23,12 +23,6 @@ export class ClientsComponent implements OnInit {
   }
 
   onSelect(cli: Clients): void {
-    this.selectedClient = cli;
-    this.changeMessage();
-  }
-
-  //this method is used to change the client that is selected
-  changeMessage(){
-    this.dataService.changeMessage(this.selectedClient);
+    this.dataService.changeClientSelected(cli); //this line is used to change the client selected in the dataservice
   }
 }

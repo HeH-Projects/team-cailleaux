@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../../data.service';
 import { Clients } from '../../clients';
-import { ClientsComponent } from '../clients/clients.component';
 import { Animal } from '../../animal';
 
 @Component({
@@ -18,18 +17,26 @@ export class ClientsInfosComponent implements OnInit {
 
   constructor(private dataService: DataService) { }
 
+  onSelect(animal: Animal){
+    //we change the selected animal in the dataservice
+    this.dataService.changeAnimalSelected(animal);
+  }
+
+  //this method fetch all the animals of an animal
   getClientAnimals(){
     this.dataService.getAnimals(this.cli.id).then(animals => this.clientAnimals = animals);
   }
 
-  back(): void {
+  //this method will make the user go back to the client list
+  back(){
     window.location.replace("#/clients");
   }
 
+  //this will delete the client
   delete(cli: Clients): void{
     this.dataService.delete(cli.id, 'client').then(() => this.back());
   }
-
+  
   ngOnInit() {
     //this subscribe to the variable currentClient that is in the DataService
     this.dataService.currentClient.subscribe(cli => this.cli = cli);

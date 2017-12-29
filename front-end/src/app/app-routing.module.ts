@@ -10,6 +10,7 @@ import { CreateDoctorsComponent } from './components/create-doctors/create-docto
 import { CreateRoomsComponent } from './components/create-rooms/create-rooms.component';
 import { ClientsInfosComponent } from './components/clients-infos/clients-infos.component';
 import { AddAnimalComponent } from './components/add-animal/add-animal.component';
+import { AnimalInfosComponent } from './components/animal-infos/animal-infos.component';
 
 const routes: Routes = [
     {path:'', redirectTo: 'agenda', pathMatch: 'full'},
@@ -22,6 +23,7 @@ const routes: Routes = [
     {path: 'rooms/create', component:CreateRoomsComponent},
     {path:'clients/infos', component:ClientsInfosComponent},
     {path:'clients/infos/addanimal', component:AddAnimalComponent},
+    {path:'clients/infos/animal', component:AnimalInfosComponent},
   ];
 
 @NgModule({

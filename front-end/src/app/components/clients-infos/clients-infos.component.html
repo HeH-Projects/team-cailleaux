@@ -2,7 +2,7 @@
     <nav id="selectbar">
     <ul>
         <li><a class="menuSelect" routerLink="/clients">Clients</a></li>
-        <li><a class="menuSelect" routerLink="/doctors">Vetenary</a></li>
+        <li><a class="menuSelect" routerLink="/doctors">Veterinary</a></li>
         <li><a class="menuSelect" routerLink="/rooms">Rooms</a></li>
     </ul>
 </nav>
@@ -13,7 +13,7 @@
 
     <h4>{{cli.lastName}}'s animals</h4>
     <ul>
-            <li class="item" *ngFor="let animal of clientAnimals" [class.selected]="animal === selectedAnimal" (click)="onSelect(animal)" routerLink="">
+            <li class="item" *ngFor="let animal of clientAnimals" [class.selected]="animal === selectedAnimal" (click)="onSelect(animal)" routerLink="animal">
                     <div class="itemtxt">
                            <h3>{{animal.name}}</h3>
                        </div>
