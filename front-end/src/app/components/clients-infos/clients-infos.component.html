@@ -16,12 +16,21 @@
             <li class="item" *ngFor="let animal of clientAnimals" [class.selected]="animal === selectedAnimal" (click)="onSelect(animal)" routerLink="animal">
                     <div class="itemtxt">
                            <h3>{{animal.name}}</h3>
+                           <p>{{animal.sex}} - {{animal.species}}</p>
                        </div>
                 </li>
     </ul>
 
+    <h4>Modify</h4>
+
+    <div>
+        <input class="textboxlong" id="firstName" type="text" [(ngModel)]="updatedClient.firstName" name="firstName" placeholder="Modify the first name">
+        <input class="textboxlong" id="lastName" type="text" [(ngModel)]="updatedClient.lastName" name="lastName" placeholder="Modify the last name">
+        <input class="textboxlong" id="address" type="text" [(ngModel)]="updatedClient.address" name="address" placeholder="Modify the address">
+        <input class="textboxlong" id="phoneNumber" type="text" [(ngModel)]="updatedClient.phoneNumber" name="phoneNumber" placeholder="Modify the phone number">
+    </div>
     <button class="butt" routerLink="addanimal">Add an animal</button>
-    <button class="butt">Modify</button>
+    <button class="butt" (click)="update()">Modify</button>
     <button class="butt" (click)="delete(cli)">Delete</button>
     <button class="butt" (click)="back()">Back</button>
 </main>

@@ -5,5 +5,5 @@ import java.util.List;
 import be.heh.spring1.model.Appointment;
 
 public interface AppointmentRepository extends CrudRepository<Appointment, Long>{
-    List<Appointment> findById(long id);
+    Appointment findById(long id);
 }

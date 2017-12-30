@@ -9,7 +9,13 @@
 <main id="main">
   <h4>{{vet.firstName}} {{vet.lastName}}</h4>
 
-  <button class="butt">Modify</button>
+  <h4>Modify</h4>
+
+  <div>
+      <input class="textboxlong" id="firstName" type="text" [(ngModel)]="updatedVet.firstName" name="firstName" placeholder="Modify the first name">
+      <input class="textboxlong" id="lastName" type="text" [(ngModel)]="updatedVet.lastName" name="lastName" placeholder="Modify the last name">
+  </div>
+  <button class="butt" (click)="update()">Modify</button>
   <button class="butt" (click)="delete(cli)">Delete</button>
   <button class="butt" (click)="back()">Back</button>
 </main>

@@ -9,6 +9,8 @@ import { Rooms } from '../../rooms';
 })
 export class RoomInfosComponent implements OnInit {
 
+  updatedRoom = new Rooms;
+
   room: Rooms;
 
   constructor(private dataService: DataService) { }
@@ -23,6 +25,14 @@ export class RoomInfosComponent implements OnInit {
 
   back(): void{
     window.location.replace("#/rooms");
+  }
+
+  update(): void{
+    if(this.updatedRoom.material==null){
+      this.updatedRoom.material=this.room.material;
+    }
+
+    this.dataService.updateRoom(this.updatedRoom, this.room.id).then(() => this.back());
   }
 
 }

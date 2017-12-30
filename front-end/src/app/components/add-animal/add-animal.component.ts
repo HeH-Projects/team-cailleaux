@@ -14,7 +14,7 @@ export class AddAnimalComponent implements OnInit {
   
   animal= new Animal;
   vetos: Doctors[];
-  public selectedVet: Doctors;
+  selectedVet: Doctors;
   client: Clients;
 
   constructor(private dataService: DataService) { }

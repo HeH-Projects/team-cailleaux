@@ -8,6 +8,7 @@ import { Doctors } from '../../doctors';
   styleUrls: ['./doctor-infos.component.css'],
 })
 export class DoctorInfosComponent implements OnInit {
+  updatedVet = new Doctors;
 
   vet: Doctors;
 
@@ -23,6 +24,19 @@ export class DoctorInfosComponent implements OnInit {
 
   back(): void{
     window.location.replace("#/doctors");
+  }
+
+  //This method is used to update informations about the veterinary
+  update(): void{
+    if(this.updatedVet.firstName==null){
+      this.updatedVet.firstName=this.vet.firstName;
+    }
+
+    if(this.updatedVet.lastName==null){
+      this.updatedVet.lastName=this.vet.lastName;
+    }
+
+    this.dataService.updateDoctor(this.updatedVet, this.vet.id).then(() => this.back());
   }
 
 }

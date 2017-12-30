@@ -11,7 +11,7 @@
 	<ul>
 		<li class="item" *ngFor="let doc of doctors" (click)="onSelect(doc)" routerLink='infos'>
 			<div class="itemtxt">
-				<h3>{{doc.firstName}} {{doc.lastName}} <button class="butt" (click)="delete(doc)">Delete</button></h3>
+				<h3>{{doc.firstName}} {{doc.lastName}}</h3>
 			</div>			  
 		</li>
 	</ul>

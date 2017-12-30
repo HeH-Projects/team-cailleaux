@@ -10,8 +10,13 @@
   <h4>Room {{room.id}}</h4>
   <p>{{room.material}}</p>
 
-  <button class="butt">Modify</button>
-  <button class="butt" (click)="delete(cli)">Delete</button>
+  <h4>Modify</h4>
+
+  <div>
+      <input class="textboxlong" id="material" type="text" [(ngModel)]="updatedRoom.material" name="masterial" placeholder="Modify the description of the material">
+  </div>
+  <button class="butt" (click)="update()">Modify</button>
+  <button class="butt" (click)="delete(room)">Delete</button>
   <button class="butt" (click)="back()">Back</button>
 </main>
 </body>

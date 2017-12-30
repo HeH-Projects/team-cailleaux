@@ -12,7 +12,6 @@
     <li class="item" *ngFor="let room of rooms" (click)="onSelect(room)" routerLink='infos'>
       <div class="itemtxt">
         <h3>{{room.id}} - {{room.material}}</h3>
-        <button id="modButton" class="butt" (click)="delete(doc)">Modify</button>
       </div>
     </li>
   </ul>

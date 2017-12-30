@@ -52,6 +52,18 @@ public class WebController {
         return client;
     }
 
+    @PostMapping(value="/updateclient/{id}")
+    public Clients updateClient(@RequestBody Clients client, @PathVariable long id){
+        Clients clientToUpdate = repoClient.findById(id);
+        clientToUpdate.setFirstName(client.getFirstName());
+        clientToUpdate.setLastName(client.getLastName());
+        clientToUpdate.setAddress(client.getAddress());
+        clientToUpdate.setPhoneNumber(client.getPhoneNumber());
+
+        repoClient.save(clientToUpdate);
+        return clientToUpdate;
+    }
+
     @GetMapping(value="/findbylastname/{lastName}", produces=MediaType.APPLICATION_JSON_VALUE)
     public List<Clients> findByLastName(@PathVariable String lastName){
         //we use the method of the inteface ClientsRepository
@@ -88,9 +100,27 @@ public class WebController {
         return vet;
     }
 
+    @GetMapping(value="/findvetbyid/{id}", produces=MediaType.APPLICATION_JSON_VALUE)
+    public Veterinary findVetByid(@PathVariable long id){
+        Veterinary vet = repoVet.findById(id);
+
+        return vet;
+    }
+
     @PostMapping(value="/postvet")
     public Veterinary postVet(@RequestBody Veterinary vet){
         repoVet.save(new Veterinary(vet.getFirstName(), vet.getLastName()));
+        return vet;
+    }
+
+    @PostMapping(value="/updatevet/{id}")
+    public Veterinary updateVet(@RequestBody Veterinary vet, @PathVariable long id){
+        Veterinary vetToUpdate = repoVet.findById(id);
+
+        vetToUpdate.setFirstName(vet.getFirstName());
+        vetToUpdate.setLastName(vet.getLastName());
+
+        repoVet.save(vetToUpdate);
         return vet;
     }
 
@@ -114,15 +144,25 @@ public class WebController {
     }
 
     @GetMapping(value="/findroombyid/{id}", produces=MediaType.APPLICATION_JSON_VALUE)
-    public List<Room> findRoomById(@PathVariable long id){
+    public Room findRoomById(@PathVariable long id){
         //we use the method of the inteface ClientsRepository
-        List<Room> rooms = repoRoom.findById(id);
+        Room rooms = repoRoom.findById(id);
         return rooms;
     }
 
     @PostMapping(value="/postroom")
     public Room postRoom(@RequestBody Room room){
         repoRoom.save(new Room(room.getMaterial()));
+        return room;
+    }
+
+    @PostMapping(value="/updateroom/{id}")
+    public Room updateRoom(@RequestBody Room room, @PathVariable long id){
+        Room roomToUpdate = repoRoom.findById(id);
+
+        roomToUpdate.setMaterial(room.getMaterial());
+
+        repoRoom.save(roomToUpdate);
         return room;
     }
 
@@ -178,6 +218,20 @@ public class WebController {
         return animal;
     }
 
+    @PostMapping(value="/updateanimal/{id}")
+    public Animal updateAnimal(@RequestBody Animal animal, @PathVariable long id){
+        Animal animalToUpdate = repoAnimal.findById(id);
+
+        animalToUpdate.setNumVet(animal.getNumVet());
+        animalToUpdate.setName(animal.getName());
+        animalToUpdate.setSex(animal.getSex());
+        animalToUpdate.setSpecies(animal.getSpecies());
+        animalToUpdate.setBirthDate(animal.getBirthDate());
+
+        repoAnimal.save(animalToUpdate);
+        return animal;
+    }
+
     @DeleteMapping(value="/animal/{id}")
     public void deleteAnimal(@PathVariable long id){
         repoAnimal.delete(id);
@@ -199,14 +253,27 @@ public class WebController {
     }
 
     @GetMapping(value="/findappointmentbyid/{id}", produces= MediaType.APPLICATION_JSON_VALUE)
-    public List<Appointment> getAppointmentById(@PathVariable long id){
-        List<Appointment> appointments = repoAppointment.findById(id);
+    public Appointment getAppointmentById(@PathVariable long id){
+        Appointment appointments = repoAppointment.findById(id);
         return appointments;
     }
 
     @PostMapping(value="/postappointment")
     public Appointment postAppointment(@RequestBody Appointment appointment){
         repoAppointment.save(new Appointment(appointment.getNumRoom(), appointment.getNumVet(), appointment.getNumAnimal(), appointment.getDate()));
+        return appointment;
+    }
+
+    @PostMapping(value="/updateappointment/{id}")
+    public Appointment updateAppointment(@RequestBody Appointment appointment, @PathVariable long id){
+        Appointment appointmentToUpdate = repoAppointment.findById(id);
+        
+        appointmentToUpdate.setNumRoom(appointment.getNumRoom());
+        appointmentToUpdate.setNumVet(appointment.getNumVet());
+        appointmentToUpdate.setNumAnimal(appointment.getNumAnimal());
+        appointmentToUpdate.setDate(appointment.getDate());
+
+        repoAppointment.save(appointmentToUpdate);
         return appointment;
     }
 

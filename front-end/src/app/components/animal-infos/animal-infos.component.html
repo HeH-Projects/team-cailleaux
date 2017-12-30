@@ -9,10 +9,24 @@
 <main id="main">
     <h4>{{animal.name}} - {{animal.species}}</h4>
     <p>Sex: {{animal.sex}}<br/>
-      Birth Date: {{animal.birthDate}}
+      Birth Date: {{animal.birthDate}} <br/>
+      Veterinary : {{vet.firstName}} {{vet.lastName}}
     </p>
 
-    <button class="butt">Modify</button>
+    <h4>Modify</h4>
+
+    <div>
+        <input class="textboxlong" id="name" type="text" [(ngModel)]="updatedAnimal.name" name="name" placeholder="Modify the name">
+        <input class="textboxlong" id="sex" type="text" [(ngModel)]="updatedAnimal.sex" name="sex" placeholder="Modify the sex">
+        <input class="textboxlong" id="species" type="text" [(ngModel)]="updatedAnimal.species" name="species" placeholder="Modify the specie">
+        <input class="textboxlong" id="birthDate" type="text" [(ngModel)]="updatedAnimal.birthDate" name="birthDate" placeholder="Modify the birthdate">
+        <select [(ngModel)]="selectedVet" name="id" id="id" #Id="ngModel">
+            <option selected="selected" disabled>Veterinary's name...</option>
+            <option *ngFor="let vet of vetos" [ngValue]="vet">{{vet.lastName}}</option>
+          </select>
+    </div>
+
+    <button class="butt" (click)="update()">Modify</button>
     <button class="butt" (click)="delete(animal)">Delete</button>
     <button class="butt" (click)="back()">Back</button>
 </main>

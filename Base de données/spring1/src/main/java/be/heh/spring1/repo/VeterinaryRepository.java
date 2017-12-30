@@ -7,4 +7,5 @@ import java.util.List;
 
 public interface VeterinaryRepository extends CrudRepository<Veterinary, Long>{
 	List<Veterinary> findByLastName(String lastName);
+	Veterinary findById(long id);
 }

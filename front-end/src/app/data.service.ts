@@ -73,6 +73,11 @@ export class DataService {
     return this.http.get(url).toPromise().then(response => response.json() as Doctors[]).catch(this.handleError);
   }
 
+  getVetByid(id: number): Promise<Doctors>{
+    const url= `findvetbyid/${id}`;
+    return this.http.get(url).toPromise().then(response => response.json() as Doctors).catch(this.handleError);
+  }
+
   //fetch animal by name
   getAnimalByName(name: string): Promise<Animal>{
     const url = `findanimalbyname/${name}`;
@@ -141,6 +146,36 @@ export class DataService {
     console.log(JSON.stringify(appointment));
     return this.http.post("postappointment",JSON.stringify(appointment), {headers: this.headers}).toPromise().then(res => res.json() as Appointment).catch(this.handleError);
   }
+
+  /**
+   * THESE METHODS ARE USED TO UPDATE THE INFOS IN THE DB
+   */
+
+   updateClient(client: Clients, id: number): Promise<Clients>{
+     const url = `updateclient/${id}`;
+     console.log(JSON.stringify(client));
+     return this.http.post(url,JSON.stringify(client), {headers: this.headers}).toPromise().then(res => res.json() as Clients).catch(this.handleError);
+   }
+
+   updateDoctor(doctor: Doctors, id: number): Promise<Doctors>{
+    const url = `updatevet/${id}`;
+    return this.http.post(url,JSON.stringify(doctor), {headers: this.headers}).toPromise().then(res => res.json() as Doctors).catch(this.handleError);
+   }
+
+   updateRoom(room: Rooms, id: number): Promise<Rooms>{
+    const url = `updateroom/${id}`;
+    return this.http.post(url,JSON.stringify(room), {headers: this.headers}).toPromise().then(res => res.json() as Rooms).catch(this.handleError);
+   }
+
+   updateAnimal(animal: Animal, id: number): Promise<Animal>{
+    const url = `updateanimal/${id}`;
+    return this.http.post(url,JSON.stringify(animal), {headers: this.headers}).toPromise().then(res => res.json() as Animal).catch(this.handleError);
+   }
+
+   updateAppointment(appointment: Appointment, id:number): Promise<Appointment>{
+    const url = `updateappointment/${id}`;
+    return this.http.post(url,JSON.stringify(appointment), {headers: this.headers}).toPromise().then(res => res.json() as Appointment).catch(this.handleError);
+   }
 
   //this method handle the possible errors that could occur the others methods
   private handleError(error: any): Promise<any>{
