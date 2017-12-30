@@ -14,15 +14,15 @@ export class ClientsComponent implements OnInit {
 
   constructor(private dataService: DataService) { }
 
-  getClients(){
+  getClients(): void{
     this.dataService.get('client').then(clients => this.clients = clients);
   }
 
-  ngOnInit(): void {
+  ngOnInit(): void{
     this.getClients();
   }
 
-  onSelect(cli: Clients): void {
+  onSelect(cli: Clients): void{
     this.dataService.changeClientSelected(cli); //this line is used to change the client selected in the dataservice
   }
 }

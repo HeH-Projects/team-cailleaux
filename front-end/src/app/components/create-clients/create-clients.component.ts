@@ -14,7 +14,7 @@ export class CreateClientsComponent implements OnInit {
 
   constructor(private dataService: DataService, private location: Location) { }
 
-  ngOnInit() {
+  ngOnInit(): void{
   }
 
   private save(): void{

@@ -11,6 +11,8 @@ import { CreateRoomsComponent } from './components/create-rooms/create-rooms.com
 import { ClientsInfosComponent } from './components/clients-infos/clients-infos.component';
 import { AddAnimalComponent } from './components/add-animal/add-animal.component';
 import { AnimalInfosComponent } from './components/animal-infos/animal-infos.component';
+import { DoctorInfosComponent } from './components/doctor-infos/doctor-infos.component';
+import { RoomInfosComponent } from './components/room-infos/room-infos.component';
 
 const routes: Routes = [
     {path:'', redirectTo: 'agenda', pathMatch: 'full'},
@@ -24,6 +26,8 @@ const routes: Routes = [
     {path:'clients/infos', component:ClientsInfosComponent},
     {path:'clients/infos/addanimal', component:AddAnimalComponent},
     {path:'clients/infos/animal', component:AnimalInfosComponent},
+    {path:'doctors/infos', component:DoctorInfosComponent},
+    {path:'rooms/infos', component:RoomInfosComponent},
   ];
 
 @NgModule({

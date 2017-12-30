@@ -12,6 +12,10 @@ export class RoomsComponent implements OnInit {
 
   constructor(private dataService: DataService) { }
 
+  onSelect(room: Rooms): void{
+    this.dataService.changeRoomSelected(room);
+  }
+
   getRooms(): void{
     this.dataService.get('room').then(rooms => this.rooms = rooms);
   }

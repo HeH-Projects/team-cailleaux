@@ -17,30 +17,31 @@ export class ClientsInfosComponent implements OnInit {
 
   constructor(private dataService: DataService) { }
 
-  onSelect(animal: Animal){
-    //we change the selected animal in the dataservice
-    this.dataService.changeAnimalSelected(animal);
+  ngOnInit(): void{
+    //this subscribe to the variable currentClient that is in the DataService
+    this.dataService.currentClient.subscribe(cli => this.cli = cli);
+    this.getClientAnimals();
   }
+
 
   //this method fetch all the animals of an animal
-  getClientAnimals(){
+  getClientAnimals(): void{
     this.dataService.getAnimals(this.cli.id).then(animals => this.clientAnimals = animals);
-  }
-
-  //this method will make the user go back to the client list
-  back(){
-    window.location.replace("#/clients");
   }
 
   //this will delete the client
   delete(cli: Clients): void{
     this.dataService.delete(cli.id, 'client').then(() => this.back());
   }
-  
-  ngOnInit() {
-    //this subscribe to the variable currentClient that is in the DataService
-    this.dataService.currentClient.subscribe(cli => this.cli = cli);
-    this.getClientAnimals();
+
+  //this method will make the user go back to the client list
+  back(): void{
+    window.location.replace("#/clients");
+  }
+
+  onSelect(animal: Animal): void{
+    //we change the selected animal in the dataservice
+    this.dataService.changeAnimalSelected(animal);
   }
 
 }

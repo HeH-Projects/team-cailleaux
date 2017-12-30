@@ -9,7 +9,7 @@
 	<a id="add" class="butt" routerLink="create">New veterinary</a>
 	<h1>Veterinarians list</h1>
 	<ul>
-		<li class="item" *ngFor="let doc of doctors">
+		<li class="item" *ngFor="let doc of doctors" (click)="onSelect(doc)" routerLink='infos'>
 			<div class="itemtxt">
 				<h3>{{doc.firstName}} {{doc.lastName}} <button class="butt" (click)="delete(doc)">Delete</button></h3>
 			</div>			  

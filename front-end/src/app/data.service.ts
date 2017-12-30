@@ -29,6 +29,16 @@ export class DataService {
   //this will transform the animal in an Observable
   currentAnimal = this.animalSelected.asObservable();
 
+  //this will contain the veterinary selected in the veterinary list
+  private vetSelected = new BehaviorSubject<Doctors>(new Doctors());
+  //this will transform the veterinary selected in an Observanle
+  currentVet = this.vetSelected.asObservable();
+
+   //this will contain the room selected in the veterinary list
+   private roomSelected = new BehaviorSubject<Rooms>(new Rooms());
+   //this will transform the veterinary selected in an Observanle
+   currentRoom = this.roomSelected.asObservable();
+
   constructor(private http: Http) { }
 
   //fetch all the clients
@@ -139,6 +149,10 @@ export class DataService {
   }
 
 
+  /**
+   * METHODS USED TO PASS VARIABLES THROUGH COMPONENTS
+   */
+
   //this method is used to change the variable "clientSelected"
   changeClientSelected(cli: Clients){
     this.clientSelected.next(cli);
@@ -147,5 +161,15 @@ export class DataService {
   //this method is used to change the variable "animalSelected"
   changeAnimalSelected(a: Animal){
     this.animalSelected.next(a);
+  }
+
+  //this method is used to change the variable "vetSelected"
+  changeVetSelected(vet: Doctors){
+    this.vetSelected.next(vet);
+  }
+
+  //this method is used to change the variable "roomSelected"
+  changeRoomSelected(room: Rooms){
+    this.roomSelected.next(room);
   }
 }

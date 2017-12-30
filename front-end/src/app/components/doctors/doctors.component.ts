@@ -12,6 +12,10 @@ export class DoctorsComponent implements OnInit {
 
   constructor(private dataService: DataService) { }
 
+  onSelect(vet: Doctors): void{
+    this.dataService.changeVetSelected(vet);
+  }
+
   getDoctors(): void{
     this.dataService.get('doctor').then(doctors => this.doctors = doctors);
   }
