@@ -1,4 +1,4 @@
 #!/bin/bash
 cd ../../front-end/
-npm install
-npm build
+npm run install
+npm run build
