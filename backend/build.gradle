@@ -30,8 +30,8 @@ dependencies {
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }
 
-task runAngular(type:Exec) {
-	commandLine '../../buildAngular.sh'
+task startAngular(type:Exec) {
+	commandLine '../buildAngular.sh'
 }
 
-compileJava.dependsOn runAngular
+compileJava.dependsOn startAngular
