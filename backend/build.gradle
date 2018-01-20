@@ -31,7 +31,8 @@ dependencies {
 }
 
 task startAngular(type:Exec) {
-	commandLine '../buildAngular.sh'
+	workingDir "../"
+	commandLine './buildAngular.sh'
 }
 
 compileJava.dependsOn startAngular
