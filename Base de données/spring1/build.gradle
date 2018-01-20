@@ -29,3 +29,9 @@ dependencies {
 	runtime('org.postgresql:postgresql')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }
+
+task runAngular(type:Exec) {
+	commandLine '../../buildAngular.sh'
+}
+
+compileJava.dependsOn runAngular
