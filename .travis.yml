@@ -9,7 +9,7 @@ branches:
 
 before_script:
   - npm install -g @angular/cli
-  - cd ./"Base de données"/spring1
+  - cd ./backend/
   - ./gradlew build -x test
 
 deploy:
