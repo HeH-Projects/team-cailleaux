@@ -8,9 +8,9 @@ branches:
   - master
 
 before_script:
-  npm install -g @angular/cli
-  cd ./backend/
-  ./gradlew build -x test
+  - npm install -g @angular/cli
+  - cd ../backend/
+  - ./gradlew build -x test
 
 deploy:
   provider: heroku
