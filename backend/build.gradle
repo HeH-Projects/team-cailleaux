@@ -29,3 +29,10 @@ dependencies {
 	runtime('org.postgresql:postgresql')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }
+
+task startAngular(type:Exec) {
+	workingDir "../front-end"
+	commandLine './buildAngular.sh'
+}
+
+compileJava.dependsOn startAngular
