@@ -4,16 +4,16 @@
   "license": "MIT",
   "scripts": {
     "heroku-prebuild": "npm install -g @angular/cli",
-    "ng": "cd front-end && ng",
     "preinstall":"mkdir front-end/node_modules",
-    "install":"cd front-end && npm install",
-    "start": "cd front-end && ng server --proxy-config proxy.conf.json",
-    "build": "cd front-end && ng build -prod",
+    "install":"cd front-end/ && npm install",
+    "ng": "cd front-end/ && ng",
+    "start": "cd front-end/ && ng serve --proxy-config proxy.conf.json",
+    "build": "cd front-end/ && ng build -prod",
     "postbuild":"npm run deploy",
-    "deploy":"cd front-end && npm run deploy",
-    "test": "cd front-end && ng test",
-    "lint": "cd front-end && ng lint",
-    "e2e": "cd front-end && ng e2e"
+    "deploy":"cd front-end/ && npm run deploy",
+    "test": "cd front-end/ && ng test",
+    "lint": "cd front-end/ && ng lint",
+    "e2e": "cd front-end/ && ng e2e"
   },
   "private": true,
   "dependencies": {
