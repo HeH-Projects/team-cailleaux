@@ -7,8 +7,10 @@ branches:
   only:
   - master
 
-before_script:
+before_install:
   - npm install -g @angular/cli
+
+script:
   - ./gradlew build -x test
 
 deploy:
