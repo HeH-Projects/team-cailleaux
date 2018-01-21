@@ -6,6 +6,8 @@
     "ng": "ng",
     "start": "ng server --proxy-config proxy.conf.json",
     "build": "ng build -prod",
+    "predeploy":"rimraf ../backend/src/main/resources/static && mkdirp ../backend/src/main/resources/static",
+    "deploy":"cp -rf dist/** ../backend/src/main/resources/static",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
