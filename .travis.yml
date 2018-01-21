@@ -9,10 +9,6 @@ branches:
 
 before_script:
   - npm install -g @angular/cli
-  - cd backend/
-
-script:
-    - ./gradlew build -x test -x startAngular
 
 deploy:
   provider: heroku
