@@ -17,7 +17,7 @@ export class CreateRoomsComponent implements OnInit {
   ngOnInit(): void{
   }
 
-  private save(): void{
+  public save(): void{
     this.dataService.createRooms(this.room).then(() => this.goBack());
   }
 

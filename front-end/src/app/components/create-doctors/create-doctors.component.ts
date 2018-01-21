@@ -17,7 +17,7 @@ export class CreateDoctorsComponent implements OnInit {
   ngOnInit(): void{
   }
 
-  private save(): void{
+  public save(): void{
     this.dataService.createDoctor(this.doctor).then(() => this.goBack());
   }
 
