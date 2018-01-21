@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
+    "heroku-prebuild": "npm install -g @angular/cli",
     "ng": "cd front-end && ng",
     "preinstall":"mkdir front-end/node_modules",
     "install":"cd front-end && npm install",
