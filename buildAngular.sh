@@ -1,4 +1,4 @@
 #!/bin/bash
-cd ./front-end/
+cd ../front-end/
 npm run install
 npm run build
