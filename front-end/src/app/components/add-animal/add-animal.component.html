@@ -10,14 +10,14 @@
 
   <form>
     <div class="formfield">
-      <input class="textboxlong" id="name" type="text" required [(ngModel)]="updatedAnimal.name" name="name" placeholder="Name">
+      <input class="textboxlong" id="name" type="text" required [(ngModel)]="animal.name" name="name" placeholder="Name">
     </div>
     <div class="formfield">
-      <input class="textboxshort" id="sex" type="text" required [(ngModel)]="updatedAnimal.sex" name="sex" placeholder="Sex">
-      <input class="textboxshort" id="species" type="text" required [(ngModel)]="updatedAnimal.species" name="species" placeholder="Species">
+      <input class="textboxshort" id="sex" type="text" required [(ngModel)]="animal.sex" name="sex" placeholder="Sex">
+      <input class="textboxshort" id="species" type="text" required [(ngModel)]="animal.species" name="species" placeholder="Species">
     </div>
     <div class="formfield">
-      <input class="textboxlong" id="birthDate" type="text" required [(ngModel)]="updatedAnimal.birthDate" name="birthDate" placeholder="Birthdate">
+      <input class="textboxlong" id="birthDate" type="text" required [(ngModel)]="animal.birthDate" name="birthDate" placeholder="Birthdate">
     </div>
     <div class="formfield">
       <select class="textboxlong" [(ngModel)]="selectedVet" name="id" id="id" #Id="ngModel">
