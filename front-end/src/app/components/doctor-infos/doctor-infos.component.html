@@ -7,16 +7,20 @@
   </ul>
 </nav>
 <main id="main">
-  <h4>{{vet.firstName}} {{vet.lastName}}</h4>
+  <a id="add" class="butt" (click)=delete(vet)>Delete veterinary</a>
+  <h1>{{vet.firstName}} {{vet.lastName}}</h1>
 
-  <h4>Modify</h4>
+  <h4>Update infos</h4>
 
-  <div>
-      <input class="textboxlong" id="firstName" type="text" [(ngModel)]="updatedVet.firstName" name="firstName" placeholder="Modify the first name">
-      <input class="textboxlong" id="lastName" type="text" [(ngModel)]="updatedVet.lastName" name="lastName" placeholder="Modify the last name">
-  </div>
-  <button class="butt" (click)="update()">Modify</button>
-  <button class="butt" (click)="delete(vet)">Delete</button>
+  <form>
+    <div class="formfield">
+      <input class="textboxlong" id="firstName" type="text" [(ngModel)]="updatedVet.firstName" name="firstName" placeholder="Modify first name">
+    </div>
+    <div class="formfield">
+      <input class="textboxlong" id="lastName" type="text" [(ngModel)]="updatedVet.lastName" name="lastName" placeholder="Modify last name">
+    </div>      
+  </form>
+  <button class="butt" (click)="update()">Update</button>
   <button class="butt" (click)="back()">Back</button>
 </main>
 </body>

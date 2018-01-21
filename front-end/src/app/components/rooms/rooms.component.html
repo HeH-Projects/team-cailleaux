@@ -6,12 +6,13 @@
   </ul>
 </nav>
 <main id="main">
-  <a id="add" class="butt" routerLink="create">Add a new Room</a>
+  <a id="add" class="butt" routerLink="create">New Room</a>
   <h1>Rooms list</h1>
   <ul>
     <li class="item" *ngFor="let room of rooms" (click)="onSelect(room)" routerLink='infos'>
       <div class="itemtxt">
-        <h3>{{room.id}} - {{room.material}}</h3>
+        <h3>Room {{room.id}}</h3>
+        <p>{{room.material}}</p>
       </div>
     </li>
   </ul>

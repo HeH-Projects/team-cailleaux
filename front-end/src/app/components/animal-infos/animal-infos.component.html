@@ -7,27 +7,35 @@
     </ul>
 </nav>
 <main id="main">
-    <h4>{{animal.name}} - {{animal.species}}</h4>
+    <a id="add" class="butt" (click)="delete(animal)">Delete animal</a>
+    <h1>{{animal.name}} - {{animal.species}}</h1>
     <p>Sex: {{animal.sex}}<br/>
       Birth Date: {{animal.birthDate}} <br/>
       Veterinary : {{vet.firstName}} {{vet.lastName}}
     </p>
 
-    <h4>Modify</h4>
+    <h4>Update infos</h4>
 
-    <div>
-        <input class="textboxlong" id="name" type="text" [(ngModel)]="updatedAnimal.name" name="name" placeholder="Modify the name">
-        <input class="textboxlong" id="sex" type="text" [(ngModel)]="updatedAnimal.sex" name="sex" placeholder="Modify the sex">
-        <input class="textboxlong" id="species" type="text" [(ngModel)]="updatedAnimal.species" name="species" placeholder="Modify the specie">
-        <input class="textboxlong" id="birthDate" type="text" [(ngModel)]="updatedAnimal.birthDate" name="birthDate" placeholder="Modify the birthdate">
-        <select [(ngModel)]="selectedVet" name="id" id="id" #Id="ngModel">
-            <option selected="selected" disabled>Veterinary's name...</option>
-            <option *ngFor="let vet of vetos" [ngValue]="vet">{{vet.lastName}}</option>
-          </select>
-    </div>
+    <form>
+        <div class="formfield">
+            <input class="textboxlong" id="name" type="text" [(ngModel)]="updatedAnimal.name" name="name" placeholder="Modify name">
+        </div>
+        <div class="formfield">
+            <input class="textboxshort" id="sex" type="text" [(ngModel)]="updatedAnimal.sex" name="sex" placeholder="Modify sex">
+            <input class="textboxshort" id="species" type="text" [(ngModel)]="updatedAnimal.species" name="species" placeholder="Modify species">
+        </div>
+        <div class="formfield">
+            <input class="textboxlong" id="birthDate" type="text" [(ngModel)]="updatedAnimal.birthDate" name="birthDate" placeholder="Modify birthdate">
+        </div>
+        <div class="formfield">
+            <select class="textboxlong" [(ngModel)]="selectedVet" name="id" id="id" #Id="ngModel">
+                <option selected="selected" disabled>Chose a veterinary</option>
+                <option *ngFor="let vet of vetos" [ngValue]="vet">{{vet.lastName}}</option>
+            </select>
+        </div>
+    </form>
 
-    <button class="butt" (click)="update()">Modify</button>
-    <button class="butt" (click)="delete(animal)">Delete</button>
+    <button class="butt" (click)="update()">Update</button>
     <button class="butt" (click)="back()">Back</button>
 </main>
 </body>

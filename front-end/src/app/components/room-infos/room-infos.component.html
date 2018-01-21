@@ -7,16 +7,18 @@
   </ul>
 </nav>
 <main id="main">
-  <h4>Room {{room.id}}</h4>
+  <a id="add" class="butt" (click)="delete(room)">Delete room</a>
+  <h1>Room {{room.id}}</h1>
   <p>{{room.material}}</p>
 
-  <h4>Modify</h4>
+  <h4>Update infos</h4>
 
-  <div>
-      <input class="textboxlong" id="material" type="text" [(ngModel)]="updatedRoom.material" name="masterial" placeholder="Modify the description of the material">
-  </div>
+  <form>
+    <div class="formfield">
+      <input class="textboxlong" id="material" type="text" [(ngModel)]="updatedRoom.material" name="masterial" placeholder="Modify room's specs">
+    </div>
+  </form>      
   <button class="butt" (click)="update()">Modify</button>
-  <button class="butt" (click)="delete(room)">Delete</button>
   <button class="butt" (click)="back()">Back</button>
 </main>
 </body>
