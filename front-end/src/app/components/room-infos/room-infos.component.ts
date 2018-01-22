@@ -19,6 +19,7 @@ export class RoomInfosComponent implements OnInit {
     this.dataService.currentRoom.subscribe(room => this.room = room);
   }
 
+  //this is used to delete a room from the db
   delete(room: Rooms): void{
     this.dataService.delete(room.id, 'room').then(() => this.back());
   }
@@ -27,6 +28,7 @@ export class RoomInfosComponent implements OnInit {
     window.location.replace("#/rooms");
   }
 
+  //this is used to update a room in the database.
   update(): void{
     if(this.updatedRoom.material==null){
       this.updatedRoom.material=this.room.material;

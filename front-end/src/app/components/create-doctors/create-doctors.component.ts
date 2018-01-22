@@ -17,6 +17,7 @@ export class CreateDoctorsComponent implements OnInit {
   ngOnInit(): void{
   }
 
+  //this is used to save a veterinary in the database
   public save(): void{
     this.dataService.createDoctor(this.doctor).then(() => this.goBack());
   }

@@ -17,6 +17,7 @@ export class CreateRoomsComponent implements OnInit {
   ngOnInit(): void{
   }
 
+  //this is used to save a room in the database
   public save(): void{
     this.dataService.createRooms(this.room).then(() => this.goBack());
   }

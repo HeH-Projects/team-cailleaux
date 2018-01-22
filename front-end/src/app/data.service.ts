@@ -31,17 +31,19 @@ export class DataService {
 
   //this will contain the veterinary selected in the veterinary list
   private vetSelected = new BehaviorSubject<Doctors>(new Doctors());
-  //this will transform the veterinary selected in an Observanle
+  //this will transform the veterinary selected in an Observable
   currentVet = this.vetSelected.asObservable();
 
    //this will contain the room selected in the veterinary list
    private roomSelected = new BehaviorSubject<Rooms>(new Rooms());
-   //this will transform the veterinary selected in an Observanle
+   //this will transform the veterinary selected in an Observable
    currentRoom = this.roomSelected.asObservable();
 
   constructor(private http: Http) { }
 
-  //fetch all the clients
+  /*REQUETE GET*/
+  
+  //fetch all the content of a table
   get(type: string): Promise<any>{
     switch(type){
       case 'client':
@@ -58,7 +60,7 @@ export class DataService {
   //fetch the animals of a client
   getAnimals(id: number): Promise<Animal[]>{
     const url = `clients/infos/animals/${id}`;
-    return this.http.get(url).toPromise().then(response => response.json() as Animal).catch(this.handleError);
+    return this.http.get(url).toPromise().then(response => response.json() as Animal[]).catch(this.handleError);
   }
 
   //fetch client by lastname
@@ -96,6 +98,8 @@ export class DataService {
     return this.http.get(url).toPromise().then(response => response.json() as Appointment[]).catch(this.handleError);
   }
 
+  /*REQUETE DELETE */
+
   //delete an entry in the database
   delete(id: number, type: string): Promise<void>{
     var url;
@@ -118,7 +122,7 @@ export class DataService {
     }
   }
 
-  //THESE METHODS ARE USED TO ADD THE DIFFERENT ENTRIES IN THE DB
+  /*REQUETE POST*/
   
   //Add clients to the database
   createClient(client: Clients): Promise<Clients> {

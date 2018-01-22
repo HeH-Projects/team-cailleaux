@@ -26,7 +26,7 @@ export class ClientsInfosComponent implements OnInit {
   }
 
 
-  //this method fetch all the animals of an animal
+  //this method fetch all the animals of a client
   getClientAnimals(): void{
     this.dataService.getAnimals(this.cli.id).then(animals => this.clientAnimals = animals);
   }

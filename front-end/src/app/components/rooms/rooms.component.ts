@@ -12,24 +12,18 @@ export class RoomsComponent implements OnInit {
 
   constructor(private dataService: DataService) { }
 
+  //this is used to change the value of the selected room stored in the service data.service
   onSelect(room: Rooms): void{
     this.dataService.changeRoomSelected(room);
   }
 
+  //this is used to fetch all the rooms of the table
   getRooms(): void{
     this.dataService.get('room').then(rooms => this.rooms = rooms);
   }
-
+  
   ngOnInit(): void{
     this.getRooms();
-  }
-
-  delete(room: Rooms): void{
-    this.dataService.delete(room.id, 'room').then(() => this.reload());
-  }
-
-  reload(): void{
-    window.location.reload();
   }
 
 }

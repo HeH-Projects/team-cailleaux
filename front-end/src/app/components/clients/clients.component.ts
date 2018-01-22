@@ -14,6 +14,7 @@ export class ClientsComponent implements OnInit {
 
   constructor(private dataService: DataService) { }
 
+  //this is used to fetch the clients of the database
   getClients(): void{
     this.dataService.get('client').then(clients => this.clients = clients);
   }

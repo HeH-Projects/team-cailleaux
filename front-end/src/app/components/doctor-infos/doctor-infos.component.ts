@@ -18,6 +18,7 @@ export class DoctorInfosComponent implements OnInit {
     this.dataService.currentVet.subscribe(vet => this.vet = vet);
   }
 
+  //this is used to delete a veterinary from the database
   delete(vet: Doctors): void{
     this.dataService.delete(vet.id, 'doctor').then(() => this.back());
   }

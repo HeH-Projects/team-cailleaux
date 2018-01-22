@@ -17,6 +17,7 @@ export class CreateClientsComponent implements OnInit {
   ngOnInit(): void{
   }
 
+  //this is used to save a client in the database
   public save(): void{
     this.dataService.createClient(this.client).then(() => this.goBack());
   }

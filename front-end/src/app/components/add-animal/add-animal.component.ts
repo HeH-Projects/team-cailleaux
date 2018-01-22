@@ -27,6 +27,7 @@ export class AddAnimalComponent implements OnInit {
     this.dataService.currentClient.subscribe(cli => this.client = cli);
   }
 
+  //this method is used to save the animal in the datebase
   save(){
     //we set the id of the owner in our animal object
     this.animal.numOwner = this.client.id;

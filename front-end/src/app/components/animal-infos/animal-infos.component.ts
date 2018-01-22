@@ -27,14 +27,17 @@ export class AnimalInfosComponent implements OnInit {
     this.getAllVeterinaries();
   }
 
+  //this is used to get the veterinary that is in charge of the animal
   getAnimalVet(): void{
     this.dataService.getVetByid(this.animal.numVet).then(vet => this.vet = vet);
   }
 
+  //this is used to fetch all the veterinaries of the database
   getAllVeterinaries(): void{
     this.dataService.get('doctor').then(vetos => this.vetos = vetos).then(() => this.getAnimalVet());
   }
 
+  //this is used to delete the animal of the database
   delete(animal: Animal): void{
     this.dataService.delete(animal.id, 'animal').then(() => this.back());
   }
@@ -43,6 +46,7 @@ export class AnimalInfosComponent implements OnInit {
     window.location.replace("#/clients/infos");
   }
 
+  //this is used to update the animal in the database
   update(): void{
     if(this.selectedVet == null){
       this.updatedAnimal.numVet = this.animal.numVet;

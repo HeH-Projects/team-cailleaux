@@ -46,6 +46,13 @@ public class WebController {
         return list;
     }
 
+    @GetMapping(value="/findbylastname/{lastName}", produces=MediaType.APPLICATION_JSON_VALUE)
+    public List<Clients> findByLastName(@PathVariable String lastName){
+        //we use the method of the inteface ClientsRepository
+        List<Clients> clients = repoClient.findByLastName(lastName);
+        return clients;
+    }
+
     @PostMapping(value="/postclient")
     public Clients postClient(@RequestBody Clients client){
         repoClient.save(new Clients(client.getFirstName(), client.getLastName(), client.getPhoneNumber(), client.getAddress()));
@@ -62,13 +69,6 @@ public class WebController {
 
         repoClient.save(clientToUpdate);
         return clientToUpdate;
-    }
-
-    @GetMapping(value="/findbylastname/{lastName}", produces=MediaType.APPLICATION_JSON_VALUE)
-    public List<Clients> findByLastName(@PathVariable String lastName){
-        //we use the method of the inteface ClientsRepository
-        List<Clients> clients = repoClient.findByLastName(lastName);
-        return clients;
     }
 
     @DeleteMapping(value="/clients/{id}")
